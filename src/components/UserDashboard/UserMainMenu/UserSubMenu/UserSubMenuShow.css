@@ -1,0 +1,27 @@
+.mainmenu
+{
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(230, 224, 224, 0.26);
+}
+
+@media screen and (min-width:543px){
+    .mainmenu{
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+@media screen and (min-width:640px){
+    .mainmenu{
+        width: 100%;
+        margin-left: 2%;
+    }
+}
+@media screen and (min-width:1024px){
+    .mainmenu{
+        width: 100%;
+        margin-left: 0%;
+    }
+}

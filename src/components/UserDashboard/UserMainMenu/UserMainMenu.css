@@ -1,0 +1,48 @@
+.UserMainMenu{
+    margin: 1%;
+    width: 240px;
+    height: 300px;
+    border-radius: 10px;
+    color: rgba(59, 58, 58, 0.644);
+    background-color: rgba(201, 194, 194, 0.452); 
+}
+@media screen and (max-width:639px){
+    .UserMainMenu{
+        width: 160px;
+    }
+}
+.UserMainMenu:hover{
+    cursor: pointer;
+ }
+.images{
+    width: 100%;
+    height: 70%;
+}
+
+.description{
+    position: relative;
+    width: 100%;
+    height: 30%;
+    /* padding: 5%; */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* background-color: rgb(245, 220, 220); */
+}
+.description > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    color: rgba(0, 0, 0, 0.54);
+    background-color: rgba(252, 250, 250, 0.444);
+}
+.mar{
+    margin-left:8px;
+    font-size: 12px;
+}
+@media screen and (max-width:640px){
+    .mar{
+        margin-left: 1px;
+        font-size: 11px;
+    }
+}

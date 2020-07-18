@@ -1,0 +1,20 @@
+.UserAddress{
+    width: 60%;
+    margin-top: 15%;
+    margin-left: 5%;
+    /* background-color:gray; */
+}
+.UserAddressElement{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+
+}
+.userAddress__home{
+position: absolute;
+width: 100%;
+height: 100%;
+color: gray;
+background-color: rgba(240, 236, 236, 0.486);
+
+}

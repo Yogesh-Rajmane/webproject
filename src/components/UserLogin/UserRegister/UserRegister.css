@@ -1,0 +1,78 @@
+.UserRegister{
+    padding:3% 1%;
+    margin: 0% auto;
+    width: 35%;
+    font-family: 'Nunito', sans-serif;
+    color: rgb(139, 135, 135);
+    border-radius: 10px; 
+    position: relative;
+    background-color: rgba(238, 238, 238, 0.561);
+
+}
+
+
+
+/* Radio Button Component  Start*/
+.radiocontainer{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    color: rgb(139, 135, 135);
+    font-size: 18px;
+    user-select: none;
+    padding-left: 35px;   
+}
+.radiocontainer input[type="radio"]{
+    display: none;
+}
+.radiocontainer .circle{
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #eee;
+    left: 0;
+    top:20%;   
+}
+.radiocontainer:hover .circle{
+    background-color: rgba(114, 109, 109, 0.534);
+}
+.radiocontainer input:checked + .circle{
+    background-color: #2196fc;
+}
+.radiocontainer input:checked + .circle::after{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+/* Radio Button Component Close */
+
+@media screen and (max-width:639px){
+    .UserRegister{
+        width: 100%;
+    }
+}
+ @media screen and (min-width:640px){
+    .UserRegister{
+        width: 80%;
+    }
+}
+@media screen and (min-width:1024px){
+    .UserRegister{
+        width: 60%;
+    }
+}
+@media screen and (min-width:1128px){
+    .UserRegister{
+        width: 35%;
+    }
+}

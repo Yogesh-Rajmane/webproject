@@ -1,0 +1,61 @@
+/* .TopBarMenuMain{
+    position: fixed;
+    width: 1055px;
+} */
+
+/* .menubartop{
+    position: fixed;
+    width: 100% ;
+
+    background-color: red;
+    padding: 2% 2.2% 2% 3%;
+    height:12%;
+} */
+/* 
+.leftAlign{
+
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    color: #4466f2;
+    background-color: white;
+} */
+
+
+
+
+
+
+
+
+
+
+
+.top-bar{
+    background-color: white !important;
+    color: #4466f2 !important;
+}
+.menu{
+    background-color: white !important;
+    
+}
+.backbtn{
+    position: fixed;
+    width: 95%;
+    color:white;
+    background-color: green;
+}
+
+.smallMenu{
+    position: fixed;
+    margin-top: 93vh;
+    width: 95%;
+    background-color: blue;
+}
+
+@media screen and (min-width:640px){
+    .backbtn{
+        margin-top: 5%;
+        width: 77.1%;
+    }
+}
