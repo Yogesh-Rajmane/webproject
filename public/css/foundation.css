@@ -13,15 +13,18 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+
 }
 
 html {
   line-height: 1.15;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%; 
+  font-family: 'Nunito', sans-serif;
+}
+
 
 body {
-  font-family: 'Nunito', sans-serif;
+  background-color: white;
 }
 
 

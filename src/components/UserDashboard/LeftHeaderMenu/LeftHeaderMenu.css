@@ -1,8 +1,12 @@
 .LeftHeaderMenu{
     padding: 2%;
-    color: white;
+    font-size: 14px;
+    color:rgba(255, 255, 255, 0.644);
+    
+    /* color: white; */
 }
 .LeftHeaderMenu:hover{
    cursor: pointer;
+   color:#ffffD9;
     transform: translateX(1px);
 } 

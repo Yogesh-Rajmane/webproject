@@ -3,7 +3,6 @@ import './LeftSidebar.css';
 import LeftHeaderMenu from '../../UserDashboard/LeftHeaderMenu/LeftHeaderMenu';
 
 class LeftSidebar extends Component {
-
     state={
         LeftMenu:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
       }
@@ -23,5 +22,4 @@ class LeftSidebar extends Component {
         )
     }
 }
-
 export default LeftSidebar;

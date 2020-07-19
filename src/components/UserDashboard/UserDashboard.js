@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import './UserDashboard.css';
 import {Link} from 'react-router-dom';
 import LeftSidebar from '../Layout/LeftSidebar/LeftSidebar';
+import $ from 'jquery';
 
  class UserDashboard extends Component {
-                 
+
+    componentDidMount(){
+        $(document).ready(function(){
+            $(".sidebar-btn").click(function(){
+                $(".wrapper").toggleClass("collapse");
+            });
+        });
+    }    
     render() {  
         return (<div style={{overflowX:'hidden'}}>
         {/* <!--wrapper start--> */}
@@ -12,22 +20,54 @@ import LeftSidebar from '../Layout/LeftSidebar/LeftSidebar';
             {/* <!--header menu start--> */}
             <div className="header">
                 <div className="header-menu">
-                    <div className="title"> </div>
+                    {/* <div className="title"></div> */}
                 
                     <div className="sidebar-btn">
                         <i className="fas fa-bars"></i>
                     </div>
+                    
                     <ul>
-                        <li><Link to="#"><i className="fas fa-search"></i></Link></li>
-                        <li><Link to="#"><i className="fas fa-search"></i></Link></li>
-                        <li><Link to="#"><i className="far fa-comment">
+                        <li><Link to="#"><i className="fas fa-shopping-cart"></i></Link></li>
+                        <li><Link to="#"><i className="far fa-bell">
                             <span >.</span>
                             </i></Link></li>
-                        <li ><Link to="#"><i className="far fa-bell">
+                        <li className="bell"><Link to="#" ><i className="far fa-comment">
                             <span>.</span>
                             </i></Link></li>
-                        <li><Link to="#"><i className="fas fa-power-off"></i></Link></li>
                     </ul>
+                    <li ><Link to="#">
+                            <div className="dropdown-r">
+                                <div className="profileImage"></div>
+                                
+                                <div class="dropdown-content">    
+                                    <Link to="#"><i className="far fa-bell">
+                                                        <span>Home</span>
+                                                </i>
+                                    </Link>
+                                    <Link to="#"><i className="far fa-bell">
+                                                        <span>Home</span>
+                                                </i>
+                                    </Link>
+                                    <Link to="#" className="thirdLine"><i className="far fa-bell">
+                                                        <span>Home</span>
+                                                </i>
+                                    </Link>
+                                    <Link to="#"><i className="far fa-bell">
+                                                        <span>Home</span>
+                                                </i>
+                                    </Link>
+                                    <Link to="#"><i className="far fa-bell">
+                                                        <span>Home</span>
+                                                </i>
+                                    </Link>
+                                    <Link to="#" className="thirdLine"><i className="far fa-bell">
+                                                        <span>Home</span>
+                                                </i>
+                                    </Link>
+                                </div>
+                            </div>
+
+                        </Link></li>
                 </div>
             </div>
             {/* <!--header menu end-->
@@ -42,7 +82,7 @@ import LeftSidebar from '../Layout/LeftSidebar/LeftSidebar';
                         <h3 className="app-logo_appName">Fithulk</h3>
                     </div>                    
 
-                    <center class="profile">
+                    <center className="profile">
                         <img src="" alt=""/>
                         <p>Yogesh</p>
                         <small>Admin</small>
@@ -95,13 +135,13 @@ import LeftSidebar from '../Layout/LeftSidebar/LeftSidebar';
             </div>
 
             {/* <!--sidebar end-->
+
             <!--main container start--> */}
             <div className="main-container">
-                
+            
                <div className="card">
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                 </div>
-
             </div>
             {/* <!--main container end--> */}
         </div>
