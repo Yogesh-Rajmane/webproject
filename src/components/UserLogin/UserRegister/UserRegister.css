@@ -1,6 +1,6 @@
 .UserRegister{
-    padding:3% 1%;
-    margin: 0% auto;
+    padding: 1px 3px;
+    margin: 3% auto;
     width: 35%;
     font-family: 'Nunito', sans-serif;
     color: rgb(139, 135, 135);
@@ -9,9 +9,9 @@
     background-color: rgba(238, 238, 238, 0.561);
 
 }
-
-
-
+.radiomain{
+    text-align: center;
+}
 /* Radio Button Component  Start*/
 .radiocontainer{
     display: inline-block;
@@ -58,21 +58,42 @@
 
 @media screen and (max-width:639px){
     .UserRegister{
+        margin: 0%;
+        padding: 3px 15px;
         width: 100%;
     }
 }
  @media screen and (min-width:640px){
     .UserRegister{
+        padding: 3px 15px;
         width: 80%;
     }
+
 }
 @media screen and (min-width:1024px){
     .UserRegister{
+        padding: 3px 15px;
         width: 60%;
+    }
+    .radiomain{
+        text-align: left;
+    }
+    .radiocontainer{
+        margin-top: 18px;
     }
 }
 @media screen and (min-width:1128px){
     .UserRegister{
+
         width: 35%;
     }
+    .radiomain{
+        text-align: left;
+    }
+    .radiocontainer{
+        margin-top: 18px;
+    }
+}
+.button{
+    margin-top: 10px;
 }

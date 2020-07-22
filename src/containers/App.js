@@ -4,7 +4,8 @@ import {Route} from 'react-router-dom';
 
 import UserLogin from '../components/UserLogin/UserLogin';
 import UserRegister from '../components/UserLogin/UserRegister/UserRegister';
-import UserDashboard from '../components/UserDashboard/UserDashboard';
+// import UserDashboard from '../components/UserDashboard/UserDashboard';
+import UserDash from '../components/UserDashboard/UserDash';
 
 
   class App extends Component {
@@ -24,7 +25,7 @@ import UserDashboard from '../components/UserDashboard/UserDashboard';
           
           <Route path="/" component={UserLogin} exact/> 
           <Route path="/UserRegister" component={UserRegister}/>
-          <Route path="/UserDashboard" component={UserDashboard}/>
+          <Route path="/UserDashboard" component={UserDash}/>
 
           {/* <UserLogin /> */}
           {/* <UserRegister /> */}

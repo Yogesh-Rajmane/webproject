@@ -1,0 +1,473 @@
+.wrapper{
+ width: 100%;
+ background-color: white;   
+}
+.wrapper .demo{
+    opacity: 0;
+}
+
+@media screen and (min-width:1024px){
+    .wrapper .demo{
+        opacity: 1;
+    }
+    .wrapper .header{
+        margin-left:calc(100% - 81%);
+    }
+    .wrapper .sidebar{
+        margin-top: -60px;
+    }
+    .wrapper .header .header-menu{
+        width: 81%;
+    }
+    .wrapper .header .sidebar-btn{
+        margin-top: 15px;
+    }
+}
+
+
+.wrapper .header{
+    padding: 15px;
+    z-index: 1;
+    background-color:white;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+  }
+/* ///////////////////small menu ///////////////////////////// */
+  
+  .wrapper .checking{
+    opacity: 0;
+    width: 100%;
+    height: 60px;
+    margin-top:60px;
+    border-top: 1px solid lightgray;
+  }
+ @media screen and (max-width:1024px){
+     .wrapper .checking{
+       padding: 0;
+     }
+     .wrapper .checking .profileImage{
+       margin-top: 5px;
+     }
+ }
+ 
+ 
+
+ 
+/* ////////////////////////small menu//////////////////////////// */
+
+/* //////////////code for sidebar button for large screen start/////////////////////// */
+  .wrapper .header .sidebar-btn{
+    margin-left: 70px;
+    /* margin-top: 15px; */
+    position: fixed;
+    z-index: 1;
+    color: blue;
+}
+.wrapper .header .sidebar-btn:hover{
+    cursor: pointer;
+}
+/* //////////////code for sidebar button for large screen end/////////////////////// */
+
+.wrapper .header .header-menu{
+    width: calc(100% - 19%);
+    height: 100%;
+    padding: 0 50px 0 0px;
+    color: blue;
+  }
+/* /////////////////code for search text for large screen start///////////////////////// */
+
+.wrapper .header .header-menu .search-box{
+    width: 100%;
+    margin-top: 8px;
+    height: 70%;
+    position: relative;
+    border-radius: 20px;
+    background-color: #f6f7fb;
+  }
+  .wrapper .header .header-menu .search-box .search-text{
+    position: absolute;
+    width: 91%;
+    left: 9%;
+    height: 100%;
+    color: rgb(87, 85, 85);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-style: none;
+    border-top: #f6f7fb;
+    background-color: #f6f7fb;
+  }
+  .wrapper .header .header-menu .search-box .search-text:focus{
+    outline: none;
+  }
+  .wrapper .header .header-menu .search-box .search{
+    position: absolute;
+    width: 9%;
+    top:10%;
+    border-right: 1px solid rgb(199, 196, 196);
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+  }
+
+/* /////////////////code for search text for large screen end///////////////////////// */
+
+/* /////////////////code for notification message cart for large screen start///////////////////////// */
+
+.wrapper .header .header-menu ul{
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  .wrapper .header .header-menu ul li{
+    border-left:1px solid rgb(220, 220, 221);
+  }
+  .wrapper .header .header-menu ul li a{
+    background: white;
+    color: #4466F2;
+    display: block;
+    font-size: 18px;
+    width: 54px;
+    height: 34px;
+    line-height: 35px;
+    text-align: center;
+    transition: 0.3s;
+    transition-property: background , color;
+  }
+  .wrapper .header .header-menu ul .bell{
+    border-right: 1px solid rgb(220, 220, 221);
+    border-left: 1px solid white !important;
+  }
+
+  .wrapper .header .header-menu ul li a .blinkbell{
+    margin-left: 2px;    
+    opacity: 1;
+    animation: blinking 1s infinite;
+    transition: opacity .3s;
+  }
+  .wrapper .header .header-menu ul{
+  list-style: none;
+}
+@keyframes blinking{
+    0%{
+      opacity: 1;
+    }
+    100%{opacity: 0;
+    }
+  }
+  .wrapper .header .header-menu ul li .dropdown-bellsubmenu{
+    position: relative;
+    display: inline-block;
+  }
+  .wrapper .header .header-menu ul li .submenucontent{
+    display: none;
+    position: absolute;
+    margin-left: -350px;
+    padding: 15px 15px;
+    margin-top: 13px;
+    background-color: white;
+    width: 360px;
+    height:400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a{
+    color: #313131;
+    padding: 5px 5px;
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: none;
+    display: block;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .first-padding{
+      width: 100%;
+      margin-top: 0;
+      /* background-color: red; */
+      position: absolute;
+      border-bottom: 1px solid rgba(211, 211, 211, 0.842);
+      height: 10%;
+      margin-left: 0px;
+
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .first-padding .noficationtfirsttext{
+    margin-top: 0;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .first-padding .notification-text{
+    /* margin-top: 0px; */
+    text-align: left;
+    color: #313131;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .first-padding .notification-count{
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:35%;
+    font-weight: 600;
+    color: white;
+    border-radius: 100px;
+    background-color: #4466F2;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card{
+    width: 100%;
+    position: absolute;
+    height: 25%;
+    font-weight: 400;
+    color: black;
+    margin-top: 10%;
+    border-bottom: 1px solid lightgray;
+    margin-left: -20px;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .cardIcon{
+    color: #4466F2;
+  }
+
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .cI2{
+    color: rgb(100, 194, 5);
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .cI3{
+    color: rgb(145, 34, 19);
+  }
+
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .card-heading{
+    text-align: left;
+    color: #4466F2;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .notification-card-text{
+    line-height: 1.3;
+    margin-left: 20px;
+    margin-top: 0;
+    font-weight: 400;
+
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .ch2{
+    color: rgb(100, 194, 5);
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .ch3{
+    color: rgb(145, 34, 19);
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .c2{
+    margin-top: 37%;
+    /* background-color: red; */
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .c3{
+    margin-top: 64%;
+  }
+
+  .wrapper .header .header-menu ul li .submenucontent a .last-padding{
+    margin-top: 92%;
+    height: 12%;
+    /* background-color: red; */
+  }
+
+  .wrapper .header .header-menu ul li :hover .submenucontent{
+    display: block;
+    animation: showDropdownMenu .5s;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card:hover{
+    background-color: lightgray;
+  }
+
+  /* /////////////////code for notification message cart for large screen end///////////////////////// */
+
+
+/* /////////////////code for RightProfilePic for large screen start///////////////////////// */
+
+.wrapper .header .header-menu li{
+    list-style: none;
+}
+.wrapper .header .header-menu li a div .profileImage {
+    margin-left: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(../../assets/profilePic.png);
+    background-size: cover;
+  }
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic {
+    position: relative;
+    display: inline-block;
+  }
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content {
+    display: none;
+    position: absolute;
+    margin-left: -50px;
+    padding: 15px 15px;
+    margin-top: 1px;
+    background-color: white;
+    width: 160px;
+    height:200px;
+    overflow-y: auto;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+  }
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content  .thirdLine{
+    border-bottom: 1px solid rgb(220, 220, 221);
+  }
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: none;
+    display: block;
+  }
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a .profilelogo{
+    margin-right: 10px;
+    color: black;
+  }
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a .profilelogotext{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a:hover .profilelogo{
+      color: blue;}
+
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic:hover .dropdown-content {
+    display: block;
+    animation: showDropdownMenu .5s;
+  }
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a i span{
+    margin-left: 10px;
+  }
+  @keyframes showDropdownMenu{
+    0%{transform: translateY(20px);}
+    100%{transform: translate(0);}
+  }
+
+/* /////////////////code for RightProfilePic for large screen end///////////////////////// */
+
+
+
+
+
+
+
+
+
+/* ///////////code right corner 3 dot for small screen start//////////////////////////// */
+.wrapper .header .rightIcon{
+    width: 20px;
+    height: 20px;
+    color: blue;
+}
+.wrapper .header .rightIcon:hover{
+    cursor: pointer;
+}
+/* ///////////code right corner 3 dot for small screen end//////////////////////////// */
+.wrapper .sidebar{
+    z-index: 1;
+    background: #2F323A;
+    position: fixed;
+    top:60px;
+    width: 260px;
+    height: calc(100% - 0px);
+    transition: 0.3s;
+    transition-property: width;
+  }
+  .wrapper .sidebar .sidebar-menu{
+    overflow: hidden;
+  }
+
+
+.wrapper .sidebar .sidebar-menu .app-logo{
+  width: 100%;;
+  padding:7px;
+  display: flex;
+}
+.wrapper .sidebar .sidebar-menu .app-logo .app-logo_logo{
+  width:50px;
+  height: 50px;
+  border-radius: 100px;
+  background-image: url(../../assets/Fithulk_logo.jpg);
+  background-size: cover;
+}
+.wrapper .sidebar .sidebar-menu .app-logo .app-logo_appName{
+  width:70%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+  margin-top: 3%;
+  margin-left: 3%;
+}
+
+  .wrapper .sidebar .sidebar-menu .profile img{
+    margin: 20px 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url(../../assets/profilePic.png);
+  }
+  
+  .wrapper .sidebar .sidebar-menu .profile p{
+    color: #f6f7fb;
+    font:16px work-Sans,sans-serif;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  .wrapper .sidebar .sidebar-menu .profile small{
+    color: white;
+    font-weight: 400;
+    font:12px work-Sans,sans-serif;
+  }
+
+/* ///////////////side bar menu list start////////////////////////////////////////////// */
+
+
+
+/* //////////////////side bar menu list end////////////////////////////////////////////////////////// */
+  /* ////////////////main container start////////////////////// */
+
+.wrapper .main-container{
+    width: calc(100% - 260px);
+    margin-top: 60px;
+    margin-left: 260px;
+    padding: 15px;
+    height: 100vh;
+    background-color: #f6f7fb;
+    transition: 0.3s;
+  }
+
+/* ///////////////////main container end//////////////// */
+
+
+.wrapper.collapse .main-container{
+    width: calc(100% - 0px);
+    margin-left: 0px;
+}
+  .wrapper.collapse .header{
+      margin-left: 0px;
+  }
+  .wrapper.collapse .sidebar{
+    width: 0px;
+  }
+  .wrapper.collapse .header .header-menu{
+      width: 100%;
+  }
+  .wrapper.collapse .sidebar .profile img,
+  .wrapper.collapse .sidebar .profile p,
+  .wrapper.collapse .sidebar a span{
+    display: none;
+  }
+
+.wrapper.colla .checking{
+  opacity: 1;
+}
+.wrapper.colla .main-container{
+  margin-top: 100px;
+}
+

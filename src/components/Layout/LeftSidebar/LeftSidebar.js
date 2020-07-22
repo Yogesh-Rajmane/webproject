@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './LeftSidebar.css';
 import LeftHeaderMenu from '../../UserDashboard/LeftHeaderMenu/LeftHeaderMenu';
+import { Link } from 'react-router-dom';
 
 class LeftSidebar extends Component {
     state={
-        LeftMenu:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+        LeftMenu:[1]
       }
 
     render() {
@@ -14,9 +15,7 @@ class LeftSidebar extends Component {
         return (
                  <div className="leftbar">
                     <div className="menuItemList">
-                        <div className="menuItem">
-                            {leftmenu}
-                        </div>
+                            {leftmenu}   
                     </div>
                 </div>
         )

@@ -4,7 +4,7 @@
     position: fixed;
     width: calc(100% - 18%);
     height: 80px;
-    margin-left:calc(100% - 81%) ;
+    margin-left:calc(100% - 81%);
     display: flex;
     top: 0;
   }
@@ -19,21 +19,9 @@
     color: blue;
   }
   
-  .wrapper .header .header-menu .title{
-    color: #fff;
-    font-size: 15px;
-    background-color: red;
-    font-weight: 900;
-  }
-  
-  .wrapper .header .header-menu .title span{
-    color: #4CCEE8;
-  }
-  
   .wrapper .header .header-menu .sidebar-btn{
-    /* color: #fff; */
     color: #4466F2;
-    position: absolute;
+    /* position: absolute; */
     margin-left: 40px;
     font-size: 22px;
     cursor: pointer;
@@ -41,35 +29,64 @@
     transition-property: color;
   }
   
-  /* .wrapper .header .header-menu .sidebar-btn:hover{
-    color: #4CCEE8;
-  } */
-  
+  .wrapper .header .header-menu .search-box{
+    width: 60%;
+    height: 50%;
+    position: relative;
+    border-radius: 20px;
+    background-color: #f6f7fb;
+  }
+  .wrapper .header .header-menu .search-box .search-text{
+    position: absolute;
+    width: 90.99%;
+    left: 9.01%;
+    height: 100%;
+    color: rgb(87, 85, 85);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-style: none;
+    border-top: #f6f7fb;
+    background-color: #f6f7fb;
+    
+  }
+  .wrapper .header .header-menu .search-box .search-text:active{
+    border-style: none !important;
+  }
+  .wrapper .header .header-menu .search-box .search{
+    position: absolute;
+    width: 9%;
+    top:10%;
+    border-right: 1px solid rgb(199, 196, 196);
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+  }
+
   .wrapper .header .header-menu ul{
     display: flex;
-    margin-left: calc(100% - 25%);
+    list-style: none;
+    justify-content: flex-end;
     margin-top: 10px;
   }
   .wrapper .header .header-menu ul li{
-    border-left:1px solid lightgray ;
+    border-left:1px solid rgb(220, 220, 221);
   }
   .wrapper .header .header-menu ul li a{
     background: white;
     color: #4466F2;
     display: block;
-    /* margin: 0 10px; */
-    /* border-left:1px solid lightgray ; */
     font-size: 18px;
     width: 54px;
     height: 34px;
     line-height: 35px;
     text-align: center;
-    /* border-radius: 50%; */
     transition: 0.3s;
-    transition-property: background, color;
+    transition-property: background , color;
   }
   .wrapper .header .header-menu ul .bell{
-    border-right: 1px solid lightgray;
+    border-right: 1px solid rgb(220, 220, 221);
     border-left: 1px solid white !important;
   }
 
@@ -79,18 +96,21 @@
     animation: blinking 1s infinite;
     transition: opacity .3s;
   }
-
+  .wrapper .header .header-menu ul{
+  list-style: none;
+}
   .wrapper .header .header-menu li a div .profileImage {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-image: url(../../assets/profilePic.png);
+    background-size: cover;
   }
-  .wrapper .header .header-menu li a .dropdown-r {
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic {
     position: relative;
     display: inline-block;
   }
-  .wrapper .header .header-menu li a .dropdown-r .dropdown-content {
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content {
     display: none;
     position: absolute;
     margin-left: -100px;
@@ -100,37 +120,33 @@
     width: 160px;
     height:200px;
     overflow-y: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
     z-index: 1;
   }
-  .wrapper .header .header-menu li a .dropdown-r .dropdown-content  .thirdLine{
-    border-bottom: 1px solid lightgray;
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content  .thirdLine{
+    border-bottom: 1px solid rgb(220, 220, 221);
   }
-  .wrapper .header .header-menu li a .dropdown-r .dropdown-content a {
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a {
     color: #313131;
     padding: 5px 5px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 300;
     text-decoration: none;
     display: block;
   }
 
-  .wrapper .header .header-menu li a .dropdown-r .dropdown-content a:hover {color: blue}
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a:hover {color: blue}
 
-  .wrapper .header .header-menu li a .dropdown-r:hover .dropdown-content {
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic:hover .dropdown-content {
     display: block;
     animation: showDropdownMenu .5s;
   }
-  .wrapper .header .header-menu li a .dropdown-r .dropdown-content a i span{
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a i span{
     margin-left: 10px;
   }
   @keyframes showDropdownMenu{
-    0%{
-      transform: translateY(20px);
-    }
-    100%{
-      transform: translate(0);
-    }
+    0%{transform: translateY(20px);}
+    100%{transform: translate(0);}
   }
   @keyframes blinking{
     0%{
@@ -139,31 +155,23 @@
     100%{opacity: 0;
     }
   }
-  /* .wrapper .header .header-menu ul li a:hover{
-    background: #4CCEE8;
-    color: #fff;
-  } */
   
   .wrapper .sidebar{
     z-index: 1;
     background: #2F323A;
     position: fixed;
-    /* top: 70px; */
-    top:0px;
+    top:70px;
     width: 260px;
     height: calc(100% - 0px);
     transition: 0.3s;
     transition-property: width;
-    /* overflow-y: auto; */
   }
-  
   .wrapper .sidebar .sidebar-menu{
     overflow: hidden;
   }
   
 
 
-/* ////////////////////////////////////;/ */
 .wrapper .sidebar .sidebar-menu .app-logo{
   width: 100%;;
   padding:7px;
@@ -184,16 +192,7 @@
   color: white;
   margin-top: 3%;
   margin-left: 3%;
- 
 }
-/* ///////////////////////////////////////////////////////// */
-
-
-
-
-
-
-
 
   .wrapper .sidebar .sidebar-menu .profile img{
     margin: 20px 0;
@@ -216,8 +215,6 @@
 
   }
   
-
-  /* ////////////////////////////////changes */
   .wrapper .sidebar .sidebar-menu .item{
     width: 260px;
     overflow: hidden;
@@ -290,7 +287,7 @@
     height: 100vh;
     background-color: #f6f7fb;
     transition: 0.3s;
-}
+  }
   
   .wrapper.collapse .sidebar{
     width: 0px;
@@ -316,7 +313,6 @@
     margin-left: 0px;
   }
   
-  /* //////////////////// */
   .wrapper.collapse .header{
     width: calc(100% - 0px);
       margin-left: 0px;

@@ -1,12 +1,83 @@
 .LeftHeaderMenu{
-    padding: 2%;
-    font-size: 14px;
+    width:100%;
+    margin-top: 10%;
+    padding: 10px;
     color:rgba(255, 255, 255, 0.644);
-    
-    /* color: white; */
 }
-.LeftHeaderMenu:hover{
-   cursor: pointer;
-   color:#ffffD9;
-    transform: translateX(1px);
-} 
+.maintext{
+  margin-top: 0;
+  margin-left: 10px;
+}
+.menu{
+  line-height: 1.1;
+}
+.sub-menu{
+  margin: -5px;
+  line-height:1.9;  
+  font-size: 14px;
+  display: none;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.menu:hover{
+  cursor: pointer;
+  color:#ffffD9;
+   transform: translateX(1px);
+}   
+
+
+
+
+
+
+
+
+
+
+.item{
+    width: 100%;
+    background-color: rebeccapurple;  
+    height: 40px;
+    list-style: none;   
+  }
+  .item:hover{
+    cursor: pointer;
+    color:#ffffD9;
+     transform: translateX(1px);
+ }   
+  .item .menu-btn{
+    text-decoration: none;
+    display: block; 
+    color: #fff;
+    position: relative;
+    padding: 10px 20px;
+  }
+  
+   .item .menu-btn i{
+    margin-right: 20px;
+  }
+  
+   .item .menu-btn .drop-down{
+    float: right;
+    font-size: 12px;
+    margin-top: 3px;
+  }
+  
+  .item .sub-menu{
+    background: #3498DB;
+  }
+
+   .item .sub-menu a{
+    display: block;
+    position: relative;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 15px;
+    padding: 20px;
+  }
+
+  .item .sub-menu i{
+    padding-right: 20px;
+    font-size: 10px;
+  }
+  

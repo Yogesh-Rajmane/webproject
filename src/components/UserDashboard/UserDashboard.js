@@ -14,32 +14,44 @@ import $ from 'jquery';
         });
     }    
     render() {  
-        return (<div style={{overflowX:'hidden'}}>
+        return (
+        <div style={{overflowX:'hidden'}}>
         {/* <!--wrapper start--> */}
         <div className="wrapper">
             {/* <!--header menu start--> */}
+            
             <div className="header">
                 <div className="header-menu">
-                    {/* <div className="title"></div> */}
                 
                     <div className="sidebar-btn">
                         <i className="fas fa-bars"></i>
                     </div>
                     
+                    <div className="search-box">
+                        <div className="search">
+                            <i className="fas fa-search"></i>
+                        </div>
+                        <input type="search" className="search-text" placeholder="search"/>
+                    </div>
+
                     <ul>
                         <li><Link to="#"><i className="fas fa-shopping-cart"></i></Link></li>
-                        <li><Link to="#"><i className="far fa-bell">
-                            <span >.</span>
-                            </i></Link></li>
+                        <li><Link to="#"><i className="far fa-bell"><span >.</span></i>
+                        <div className="dropdown-bellsubmenu">
+                            <div></div>
+                            <div className="submenucontent">
+                                
+                            </div>
+                        </div>
+                        </Link></li>
                         <li className="bell"><Link to="#" ><i className="far fa-comment">
                             <span>.</span>
                             </i></Link></li>
                     </ul>
                     <li ><Link to="#">
-                            <div className="dropdown-r">
-                                <div className="profileImage"></div>
-                                
-                                <div class="dropdown-content">    
+                            <div className="dropdown-rightprofilepic">
+                                <div className="profileImage"></div>                                
+                                <div className="dropdown-content">    
                                     <Link to="#"><i className="far fa-bell">
                                                         <span>Home</span>
                                                 </i>
@@ -53,16 +65,12 @@ import $ from 'jquery';
                                                 </i>
                                     </Link>
                                     <Link to="#"><i className="far fa-bell">
-                                                        <span>Home</span>
+                                                        <span>Edit</span>
                                                 </i>
                                     </Link>
                                     <Link to="#"><i className="far fa-bell">
-                                                        <span>Home</span>
-                                                </i>
-                                    </Link>
-                                    <Link to="#" className="thirdLine"><i className="far fa-bell">
-                                                        <span>Home</span>
-                                                </i>
+                                                        <span>Logout</span> </i>
+                                                
                                     </Link>
                                 </div>
                             </div>
@@ -76,7 +84,6 @@ import $ from 'jquery';
             <!--sidebar start--> */}
             <div className="sidebar">
                 <div className="sidebar-menu">
-                    
                     <div className="app-logo">
                         <div className="app-logo_logo"></div>
                         <h3 className="app-logo_appName">Fithulk</h3>
@@ -88,7 +95,6 @@ import $ from 'jquery';
                         <small>Admin</small>
                     </center>
                     
-                    {/* <LeftHeaderMenu /> */}
                     <LeftSidebar />
 
                     {/* <li className="item">
@@ -137,8 +143,7 @@ import $ from 'jquery';
             {/* <!--sidebar end-->
 
             <!--main container start--> */}
-            <div className="main-container">
-            
+            <div className="main-container">            
                <div className="card">
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                 </div>
