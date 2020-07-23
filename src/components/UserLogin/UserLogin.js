@@ -15,12 +15,12 @@ class UserLogin extends Component {
                         <form >
                             <div className="grid-x">
                                 <label className="logintext cell large-6 medium-6 small-24">Your Name</label> 
-                                <input type="text" className="cell large-18 medium-18 small-24" placeholder="test@gmail.com" required></input>
+                                <input type="text" className="cell large-18 medium-18 small-24 username" placeholder="test@gmail.com" required></input>
                             </div>
                         
                             <div className="grid-x" style={{marginTop:'15px'}}>
                                     <label className="loginpassword cell large-6 medium-6 small-24">Password</label> 
-                                    <input type="password" className="cell large-18 medium-18 small-24" placeholder="Password" required></input>
+                                    <input type="password" className="cell large-18 medium-18 small-24 username" placeholder="Password" required></input>
                             </div>
 
                             <div className="grid-x terms" style={{marginTop:'25px'}}>

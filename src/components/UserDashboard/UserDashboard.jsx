@@ -1,49 +1,75 @@
 import React, { Component } from 'react';
-import './UserDash.css';
+import './UserDashboard.css';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import LeftSidebar from '../Layout/LeftSidebar/LeftSidebar';
 
-class UserDash extends Component {
+
+class UserDashboard extends Component {
 
     componentDidMount(){
         $(document).ready(function(){
+             var i=0;
+
+////////////////////jquery code for showing friend list (on click message icon) (small-medium-large screen) start/////////////////////////////////////////////
+             $(".bellicon").click(function(){     
+                if(i===0)
+                {   
+                    i=i+1
+                    $(".wrapper .msgsubmenucontent").css("display","block")
+                    $(".wrapper .msgsubmenucontent").css("animation","slidemsg .8s")
+               
+                }
+                else{
+                        $(".wrapper .msgsubmenucontent").css("display","none")
+                        i=i-1
+                    }
+            });
+/////////////////////jquery code for showing friend list (on click message icon) (small-medium-large screen) end//////////////////////////////////////////////////////////////////
+           
+//////////////jquery code for create another copy of wrapper(small-medium-large screen)start///////////////////////////////////////////////////
             $(".sidebar-btn").click(function(){
                 $(".wrapper").toggleClass("collapse");
             });
+//////////////jquery code for create another copy of wrapper(small-medium-large screen)end///////////////////////////////////////////////////
 
+//////////////jquery code for create another copy of wrapper(small-medium-large screen)start  Note:-(three dot)///////////////////////////////////////////////////          
             $(".rightIcon").click(function(){
                 $(".wrapper").toggleClass("colla");
             });
+//////////////jquery code for create another copy of wrapper(small-medium-large screen)end///////////////////////////////////////////////////
         });
     }    
     render() {
-        let smallmenu =null;
-
-         smallmenu=( 
-            <div className="header demo">
-            <div className="header-menu" > 
-            <div className="grid-x">
-                <div className="cell large-3"> 
+  ///////////////Header menu bar for large screen start////////////////////////////////////////////////////////////////////      
+        let largemenu =null;
+        largemenu=(<div className="header demo">
+        <div className="header-menu" > 
+            
+            <div className="grid-x">             
+                <div className="cell large-3">      {/* sidebar menu using font awesome icon start*/} 
                     <div className="sidebar-btn">
                         <i className="fas fa-bars"></i>
-                    </div>
+                    </div>                           {/* sidebar menu using font awesome icon end*/}
                 </div>
 
                 <div className="cell large-12" >                    
-                    <div className="search-box">
+                    <div className="search-box">  {/* search text box start*/}
                         <div className="search">
                             <i className="fas fa-search"></i>
                         </div>
                         <input type="search" className="search-text" placeholder="search"/>
-                    </div>
+                    </div>                        {/* search text box end*/}
                 </div>
                 
                 <div className="cell large-7" >
-                    <ul>
+                    <ul>  {/* shopping cart notification menu and message menu  start*/}
+                            {/* shopping cart start*/}
                         <li><Link to="#"><i className="fas fa-shopping-cart"></i></Link></li>
-                        
-                {/* //////////////////////////////////////////////////////////        */}
+                              {/* shopping cart end*/}
+
+                            {/* //////////Notification menu coding start////////*/}
+
                         <li><Link to="#"><i className="far fa-bell"><span className="blinkbell">.</span></i>
                             <div className="dropdown-bellsubmenu">
                                 <div className="submenucontent"> 
@@ -117,53 +143,144 @@ class UserDash extends Component {
                                 </div>
                             </div>
                         </Link></li>
-{/* //////////////////////////////////////////////////////////////////////////////// */}
+                    {/* /////////Notification menu coding end/////////////////////////////// */}
 
-                        <li className="bell"><Link to="#" ><i className="far fa-comment">
-                                <span className="blinkbell">.</span>
-                            </i></Link>
+                    {/* message menu coding start*/}
+                        <li className="bell bellicon"><Link to="#" className="msglink"><i className="far fa-comment"><span className="blinkbell ">.</span></i>
+                            <div className="dropdown-msgsubmenu">
+                                <div className="msgsubmenucontent msgsubmenucontent1"> 
+
+                                    <div className="grid-x msgfriendtext">
+                                          <h3 className="cell large-24 medium-24 small-24 textfriend">Friend List</h3>
+                                    </div>
+                                    <div className="grid-x msgsearch ">
+                                        <div className="cell large-24 medium-24 small-24">
+                                            <input type="search" className="searchinput" placeholder="search friend"></input>
+                                        </div>
+                                    </div>
+                    
+                                    <div className="grid-x msgsearch friendlist">
+                                        <div className="friendphoto">
+                                            <div className="statusindicator"></div>
+                                        </div>
+
+                                        <div className="grid-x">
+                                            <div className="cell large-24 medium-24 small-24 onlinestatus">
+                                                <h3>Yogesh Rajmane</h3>
+                                                <h4 className="online">Online</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid-x msgsearch friendlist f2">
+                                        <div className="friendphoto ">
+                                            <div className="statusindicator "></div>
+                                        </div>
+                                        
+                                        <div className="grid-x">
+                                            <div className="cell large-24 medium-24 small-24 onlinestatus">
+                                                <h3>Sunil Shinde</h3>
+                                                <h4 className="online">Online</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="grid-x msgsearch friendlist f3">
+                                        <div className="friendphoto ">
+                                            <div className="statusindicator "></div>
+                                        </div>
+                                        
+                                        <div className="grid-x">
+                                            <div className="cell large-24 medium-24 small-24 onlinestatus">
+                                                <h3>Sunil Shinde</h3>
+                                                <h4 className="online">Online</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid-x msgsearch friendlist f4">
+                                        <div className="friendphoto ">
+                                            <div className="statusindicator s4"></div>
+                                        </div>
+                                        
+                                        <div className="grid-x">
+                                            <div className="cell large-24 medium-24 small-24 onlinestatus">
+                                                <h3>Rahul Shinde</h3>
+                                                <h4 className="online">offline</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="grid-x msgsearch friendlist f4">
+                                        <div className="friendphoto ">
+                                            <div className="statusindicator s4"></div>
+                                        </div>
+                                        
+                                        <div className="grid-x">
+                                            <div className="cell large-24 medium-24 small-24 onlinestatus">
+                                                <h3>Rahul Shinde</h3>
+                                                <h4 className="online">offline</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </Link>
                         </li>
-                    </ul>
-                </div>
+                    {/* //////////message menu coding end/////////////////////////////// */}
+                    </ul>      {/* shopping cart notification menu and message menu coding end*/}
 
+                </div>
+                    {/* header menu bar right side profile image coding start*/}
                 <div className="cell large-2">
                     <li ><Link to="#">
                         <div className="dropdown-rightprofilepic">
-                            <div className="profileImage"></div>                                
+                            <div className="profileImage">
+                                <div className="profileImageblinking"></div>
+                                <div className="prof"></div>
+                            </div>                                
                             <div className="dropdown-content">    
-                                <Link to="#"><i className="fas fa-user-circle profilelogo"></i>
-                                                    <span className="profilelogotext">Edit Profile</span>
+
+                                <Link to="#"><i className="fas fa-user-circle profilelogo p1"></i>
+                                                    <span className="profilelogotext p1">Edit Profile</span>
                                           
                                 </Link>
-                                <Link to="#"><i className="fas fa-envelope profilelogo"></i>
-                                                    <span className="profilelogotext">Inbox</span>
+                                <Link to="#"><i className="fas fa-envelope profilelogo p1"></i>
+                                                    <span className="profilelogotext p1">Inbox</span>
  
                                 </Link>
-                                <Link to="#" className="thirdLine"><i className="fas fa-lock profilelogo"></i>
-                                                    <span className="profilelogotext">Lock Screen</span>
+                                <Link to="#" className="thirdLine"><i className="fas fa-lock profilelogo p1"></i>
+                                                    <span className="profilelogotext p1">Lock Screen</span>
                                             
                                 </Link>
-                                <Link to="#"><i className="fas fa-cog profilelogo"></i>
-                                                    <span className="profilelogotext">Setting</span>
+                                <Link to="#"><i className="fas fa-cog profilelogo p1"></i>
+                                                    <span className="profilelogotext p1">Setting</span>
                                             
                                 </Link>
 
-                                <Link to="#"><i className="far fa-bell profilelogo"></i>
-                                                    <span className="profilelogotext">Logout</span> 
+                                <Link to="#"><i class="fas fa-sign-out-alt profilelogo p1"></i>
+                                                    <span className="profilelogotext p1">Logout</span> 
                                             
                                 </Link>
+
                             </div>
                         </div>
                     </Link></li>
                 </div>
+                    {/* header menu bar right side profile image coding end*/}
             </div>
             </div>
             </div>
+
 )
+///////////////Header menu bar for large screen end////////////////////////////////////////////////////////////////////      
         return (
             <div className="wrapper">
                     {/* header start for small screen*/}
-                    <div className="show-for-small-only header">
+                    <div className="show-for-small-only header ">
                         <div className="grid-x ">
                             <div className="cell small-22 medium-22">
                                 <div className="sidebar-btn" style={{marginLeft:'170px'}}><i className="fas fa-bars"></i></div>
@@ -180,12 +297,13 @@ class UserDash extends Component {
 
   
                     {/* header start for medium screen*/}
-                    <div className="show-for-medium-only header" >
+                    <div className="show-for-medium-only header ">
                         <div className="grid-x ">
-                            <div className="cell small-22 medium-22">
-                                <div className="sidebar-btn" style={{marginLeft:'170px'}}><i className="fas fa-bars"></i></div>
+                            <div className="cell small-22 medium-18">
+                                <div className="sidebar-btn sidebar-btn-medium" style={{marginLeft:'170px'}}><i className="fas fa-bars"></i></div>
                             </div>
-                            <div className="cell small-2 medium-2" >
+                            {/* <div className="cell show-for-medium-only medium-1"></div> */}
+                            <div className="cell small-2 medium-4" >
                                 <div className="rightIcon">
                                     <i className="fa fa-ellipsis-h"></i>
                                 </div>
@@ -194,11 +312,12 @@ class UserDash extends Component {
                     </div>
                  {/* header for medium screen end */}
 {/* //////////////////////////////////////////////////////////////////// */}
-            <div className="hide-for-large header checking" >
+
+            <div className="hide-for-large header checking headersmall headermedium" >
                 <div className="header-menu">
                 <div className="grid-x">
 
-                <div className="cell small-10" >                    
+                <div className="cell small-10 medium-10">                    
                     <div className="search-box">
                         <div className="search">
                             <i className="fas fa-search"></i>
@@ -207,7 +326,7 @@ class UserDash extends Component {
                     </div>
                 </div>
                 
-                <div className="cell small-10" >
+                <div className="cell small-10 medium-10" >
                     <ul>
                         <li><Link to="#"><i className="fas fa-shopping-cart"></i></Link></li>
                       {/* //////////////////////////////////////////////////////////// */}
@@ -287,36 +406,116 @@ class UserDash extends Component {
                             </div>
                         </Link></li>
             {/* ///////////////////////////////////////////////////////////             */}
-                        <li className="bell"><Link to="#" ><i className="far fa-comment">
+                        {/* <li className="bell"><Link to="#" ><i className="far fa-comment">
                             <span>.</span>
-                            </i></Link></li>
+                            </i></Link></li> */}
+                        <li className="bell bellicon"><Link to="#" ><i className="far fa-comment"><span className="blinkbell ">.</span></i>
+                         
+                            <div className="dropdown-msgsubmenu">
+                                <div className="msgsubmenucontent"> 
+
+                                    <div className="grid-x msgfriendtext">
+                                          <h3 className="cell large-24 medium-24 small-24 textfriend">Friend List</h3>
+                                    </div>
+                                    <div className="grid-x msgsearch ">
+                                        <div className="cell large-24 medium-24 small-24">
+                                            <input type="search" className="searchinput" placeholder="search friend"></input>
+                                        </div>
+                                    </div>
+                    
+                                    <div className="grid-x msgsearch friendlist">
+                                        <div className="friendphoto">
+                                            <div className="statusindicator"></div>
+                                        </div>
+
+                                        <div className="grid-x">
+                                            <div className="cell large-24 medium-24 small-24 onlinestatus">
+                                                <h3>Yogesh Rajmane</h3>
+                                                <h4 className="online">Online</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid-x msgsearch friendlist f2">
+                                        <div className="friendphoto ">
+                                            <div className="statusindicator "></div>
+                                        </div>
+                                        
+                                        <div className="grid-x">
+                                            <div className="cell large-24 medium-24 small-24 onlinestatus">
+                                                <h3>Sunil Shinde</h3>
+                                                <h4 className="online">Online</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="grid-x msgsearch friendlist f3">
+                                        <div className="friendphoto ">
+                                            <div className="statusindicator "></div>
+                                        </div>
+                                        
+                                        <div className="grid-x">
+                                            <div className="cell large-24 medium-24 small-24 onlinestatus">
+                                                <h3>Sunil Shinde</h3>
+                                                <h4 className="online">Online</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid-x msgsearch friendlist f4">
+                                        <div className="friendphoto ">
+                                            <div className="statusindicator s4"></div>
+                                        </div>
+                                        
+                                        <div className="grid-x">
+                                            <div className="cell large-24 medium-24 small-24 onlinestatus">
+                                                <h3>Rahul Shinde</h3>
+                                                <h4 className="online">offline</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+   
+                        </Link>
+                        </li>
+
+           {/* ////////////////////////////////////////////////////////////////////                  */}
                     </ul>
                 </div>
-                <div className="cell small-4">
+
+                <div className="cell small-4 medium-4 ">
                     <li ><Link to="#">
-                        <div className="dropdown-rightprofilepic">
-                            <div className="profileImage"></div>                                
+                        <div className="dropdown-rightprofilepic ">
+                            <div className="profileImage">
+                            <div className="profileImageblinking " style={{marginTop:'13px'}}></div>
+                                <div className="prof"></div>
+                                </div>                                
                             <div className="dropdown-content">    
-                                <Link to="#"><i className="far fa-bell">
-                                                    <span>Home</span>
-                                            </i>
+                            <Link to="#"><i className="fas fa-user-circle profilelogo p1"></i>
+                                                    <span className="profilelogotext p1">Edit Profile</span>
+                                          
                                 </Link>
-                                <Link to="#"><i className="far fa-bell">
-                                                    <span>Home</span>
-                                            </i>
+                                <Link to="#"><i className="fas fa-envelope profilelogo p1"></i>
+                                                    <span className="profilelogotext p1">Inbox</span>
+ 
                                 </Link>
-                                <Link to="#" className="thirdLine"><i className="far fa-bell">
-                                                    <span>Home</span>
-                                            </i>
-                                </Link>
-                                <Link to="#"><i className="far fa-bell">
-                                                    <span>Edit</span>
-                                            </i>
-                                </Link>
-                                <Link to="#"><i className="far fa-bell">
-                                                    <span>Logout</span> </i>
+                                <Link to="#" className="thirdLine"><i className="fas fa-lock profilelogo p1"></i>
+                                                    <span className="profilelogotext p1">Lock Screen</span>
                                             
                                 </Link>
+                                <Link to="#"><i className="fas fa-cog profilelogo p1"></i>
+                                                    <span className="profilelogotext p1">Setting</span>
+                                            
+                                </Link>
+
+                                <Link to="#"><i class="fas fa-sign-out-alt profilelogo p1"></i>
+                                                    <span className="profilelogotext p1">Logout</span> 
+                                            
+                                </Link>                            
                             </div>
                         </div>
                     </Link></li>
@@ -330,7 +529,7 @@ class UserDash extends Component {
             {/* header for large screen start */}
            
                    <div className="show-for-large" style={{height:'30px'}}>
-                         {smallmenu}
+                         {largemenu}
                    </div>
 
             {/* <!--header menu end for large -->
@@ -363,6 +562,7 @@ class UserDash extends Component {
 
                 {/* main container start */}
                 <div className="main-container">            
+                    {/* <UserMainMenu /> */}
                     <div className="card">
                         <p>Lorem Ipsum
                              is simply dummy text of the pri
@@ -372,8 +572,9 @@ class UserDash extends Component {
                 </div>
                 {/* <!--main container end--> */}
 
-                </div>
+
+        </div>
         )
     }
 }
-export default UserDash;
+export default UserDashboard;

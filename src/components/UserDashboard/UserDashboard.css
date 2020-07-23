@@ -1,45 +1,108 @@
-  .wrapper .header{
+.wrapper{
+ width: 100%;
+ background-color: white;   
+}
+.wrapper .demo{
+    opacity: 0;
+}
+
+@media screen and (min-width:1024px){
+    .wrapper .demo{
+        opacity: 1;
+    }
+    .wrapper .header{
+        margin-left:calc(100% - 81%);
+    }
+    .wrapper .sidebar{
+        margin-top: -60px;
+    }
+    .wrapper .header .header-menu{
+        width: 81%;
+    }
+    .wrapper .header .sidebar-btn{
+        margin-top: 15px;
+    }
+}
+
+
+.wrapper .header {
+    padding: 15px;
     z-index: 1;
-    background-color: white;
+    background-color:white;
     position: fixed;
-    width: calc(100% - 18%);
-    height: 80px;
-    margin-left:calc(100% - 81%);
-    display: flex;
+    width: 100%;
+    height: 60px;
     top: 0;
+
+  }
+  @media screen and (min-width:640px){
+    .wrapper .checking {
+      margin-left:calc(100% - 75%);
+      /* padding:0 0 0 19%; */
+    }
+  }
+  @media screen and (max-width:640px){
+    .wrapper .headersmall {
+      margin-left:calc(100% - 81%);
+    }
+
   }
 
-  .wrapper .header .header-menu{
-    width: calc(100% - 0%);
+  /* ///////////////////small menu ///////////////////////////// */
+  
+  .wrapper .checking{
+    opacity: 0;
+    width: 100%;
+    height: 60px;
+    margin-top:60px;
+    border-top: 1px solid lightgray;
+  }
+ @media screen and (max-width:1024px){
+     .wrapper .checking{
+       padding: 0;
+     }
+     .wrapper .checking .profileImage{
+       margin-top: 5px;
+     }
+ }
+ 
+ 
+/* ////////////////////////small menu//////////////////////////// */
+
+/* //////////////code for sidebar button for large screen start/////////////////////// */
+  .wrapper .header .sidebar-btn{
+    margin-left: 70px;
+    /* margin-top: 15px; */
+    position: fixed;
+    z-index: 1;
+    color: blue;
+}
+.wrapper .header .sidebar-btn:hover{
+    cursor: pointer;
+}
+/* //////////////code for sidebar button for large screen end/////////////////////// */
+
+.wrapper .header .header-menu{
+    width: calc(100% - 19%);
     height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px 0 20px;
+    padding: 0 50px 0 0px;
     color: blue;
   }
-  
-  .wrapper .header .header-menu .sidebar-btn{
-    color: #4466F2;
-    /* position: absolute; */
-    margin-left: 40px;
-    font-size: 22px;
-    cursor: pointer;
-    transition: 0.3s;
-    transition-property: color;
-  }
-  
-  .wrapper .header .header-menu .search-box{
-    width: 60%;
-    height: 50%;
+/* /////////////////code for search text for large screen start///////////////////////// */
+
+.wrapper .header .header-menu .search-box{
+    width: 100%;
+    margin-top: 8px;
+    height: 70%;
     position: relative;
     border-radius: 20px;
     background-color: #f6f7fb;
   }
   .wrapper .header .header-menu .search-box .search-text{
     position: absolute;
-    width: 90.99%;
-    left: 9.01%;
+    width: 91%;
+    left: 9%;
+    padding:0 0 0 12px;
     height: 100%;
     color: rgb(87, 85, 85);
     border-top-right-radius: 20px;
@@ -47,10 +110,9 @@
     border-style: none;
     border-top: #f6f7fb;
     background-color: #f6f7fb;
-    
   }
-  .wrapper .header .header-menu .search-box .search-text:active{
-    border-style: none !important;
+  .wrapper .header .header-menu .search-box .search-text:focus{
+    outline: none;
   }
   .wrapper .header .header-menu .search-box .search{
     position: absolute;
@@ -64,7 +126,11 @@
     height: 80%;
   }
 
-  .wrapper .header .header-menu ul{
+/* /////////////////code for search text for large screen end///////////////////////// */
+
+/* /////////////////code for notification icon large screen start///////////////////////// */
+
+.wrapper .header .header-menu ul{
     display: flex;
     list-style: none;
     justify-content: flex-end;
@@ -85,12 +151,13 @@
     transition: 0.3s;
     transition-property: background , color;
   }
+  
   .wrapper .header .header-menu ul .bell{
     border-right: 1px solid rgb(220, 220, 221);
     border-left: 1px solid white !important;
   }
 
-  .wrapper .header .header-menu ul li a span{
+  .wrapper .header .header-menu ul li a .blinkbell{
     margin-left: 2px;    
     opacity: 1;
     animation: blinking 1s infinite;
@@ -99,23 +166,328 @@
   .wrapper .header .header-menu ul{
   list-style: none;
 }
-  .wrapper .header .header-menu li a div .profileImage {
+@keyframes blinking{
+    0%{
+      opacity: 1;
+    }
+    100%{opacity: 0;
+    }
+  }
+
+  .wrapper .header .header-menu ul li .dropdown-bellsubmenu{
+    position: relative;
+    display: inline-block;
+  }
+  .wrapper .header .header-menu ul li .submenucontent{
+    display: none;
+    position: absolute;
+    margin-left: -350px;
+    padding: 15px 15px;
+    margin-top: 13px;
+/* background-color: red; */
+    background-color: white;
+    width: 360px;
+    height:400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a{
+    color: #313131;
+    padding: 5px 5px;
+    font-size: 16px;
+    /* background-color: red; */
+    font-weight: 300;
+    text-decoration: none;
+    display: block;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .first-padding{
+      width: 100%;
+      margin-top: 0;
+      /* background-color: red; */
+      position: absolute;
+      border-bottom: 1px solid rgba(211, 211, 211, 0.842);
+      height: 10%;
+      margin-left: 0px;
+
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .first-padding .noficationtfirsttext{
+    margin-top: 0;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .first-padding .notification-text{
+    /* margin-top: 0px; */
+    text-align: left;
+    color: #313131;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .first-padding .notification-count{
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:35%;
+    font-weight: 600;
+    color: white;
+    border-radius: 100px;
+    background-color: #4466F2;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card{
+    width: 100%;
+    position: absolute;
+    height: 25%;
+    font-weight: 400;
+    color: black;
+    margin-top: 10%;
+    border-bottom: 1px solid lightgray;
+    margin-left: -20px;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .cardIcon{
+    color: #4466F2;
+  }
+
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .cI2{
+    color: rgb(100, 194, 5);
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .cI3{
+    color: rgb(145, 34, 19);
+  }
+
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .card-heading{
+    text-align: left;
+    color: #4466F2;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .notification-card-text{
+    line-height: 1.3;
+    margin-left: 20px;
+    margin-top: 0;
+    font-weight: 400;
+
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .ch2{
+    color: rgb(100, 194, 5);
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card .ch3{
+    color: rgb(145, 34, 19);
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .c2{
+    margin-top: 37%;
+    /* background-color: red; */
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .c3{
+    margin-top: 64%;
+  }
+
+  .wrapper .header .header-menu ul li .submenucontent a .last-padding{
+    margin-top: 92%;
+    height: 12%;
+    /* background-color: red; */
+  }
+
+  .wrapper .header .header-menu ul li :hover .submenucontent{
+    display: block;
+    animation: showDropdownMenu .5s;
+  }
+  .wrapper .header .header-menu ul li .submenucontent a .notification-card:hover{
+    background-color: lightgray;
+  }
+
+  /* /////////////////code for notification icon for large screen end///////////////////////// */
+
+/* ///////////////////////code for message  for large screen start/////////////////////////////////////////////////////////////////////////// */
+
+
+
+.wrapper .header .header-menu ul li .dropdown-msgsubmenu{
+  position: relative;
+  display: inline-block;
+}
+
+.wrapper .header .header-menu ul li .msgsubmenucontent{
+  display: none;
+  position: relative;
+  margin-left: -180px;
+  padding: 15px 15px;
+  margin-top: 35px;
+
+  background-color: white;
+  width: 360px;
+  height:600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  transition: all .3s;
+}
+
+.wrapper .header .header-menu ul li .msgsubmenucontent .msgfriendtext{
+
+  width: 100%;
+  left: 0;
+  top:0;
+  background-color: white;
+
+}
+.wrapper .header .header-menu ul li .msgsubmenucontent .msgfriendtext .textfriend{
+  color: rgb(48, 47, 47);
+  font-weight: 500;
+}
+.wrapper .header .header-menu ul li .msgsubmenucontent .msgsearch{
+
+  width: 100%;
+  padding:8%;
+
+  left: 0;
+  background-color: #f6f7fb;
+}
+.wrapper .header .header-menu ul li .msgsubmenucontent .msgsearch .searchinput{
+  width: 100%;
+  border-style:none ;
+  height:45px;
+  padding:0 0 0 15px;
+  border-radius: 100px;
+  outline: none;
+}
+.wrapper .header .header-menu ul li .msgsubmenucontent .friendlist{
+ position: relative;
+
+  padding:40px;
+  background-color: white;
+}
+.wrapper .header .header-menu ul li .msgsubmenucontent .friendlist .friendphoto{
+  position: absolute;
+  top: 18px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color:gainsboro;
+}
+.wrapper .header .header-menu ul li .msgsubmenucontent .friendlist .friendphoto .statusindicator{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 90%;
+  top: 40%;
+  border-radius: 100px;
+  background-color: green;
+}
+.wrapper .header .header-menu ul li .msgsubmenucontent .friendlist .onlinestatus{
+  position: absolute;
+  line-height: 1;
+  left: 25%;
+
+  width: 60%;
+  color: rgba(48, 47, 47, 0.774);
+  top: 0;
+}
+.wrapper .header .header-menu ul li .msgsubmenucontent .friendlist .onlinestatus h3{
+  font-size: 18px;
+}
+.wrapper .header .header-menu ul li .msgsubmenucontent .friendlist .onlinestatus h4{
+  font-size: 15px;
+}
+
+.wrapper .header .header-menu ul li .msgsubmenucontent .friendlist .onlinestatus .online{
+ position: absolute;
+  color: rgba(83, 83, 85, 0.456);
+  margin-top: -10px;
+  left: 30%;
+}
+.wrapper .header .header-menu ul li .msgsubmenucontent .friendlist .friendphoto .s4{
+  background-color: coral;
+}
+
+
+@keyframes slidemsg{
+  0%{
+      transform: translateX(360px);
+  }
+  100%{
+      transform: translate(0);
+  }
+}
+
+/* ///////////////////////////code for message  for large screen end////////////////////////////////////////////////////////////////////// */
+
+
+
+/* /////////////////code for RightProfilePic for large screen start///////////////////////// */
+
+.wrapper .header .header-menu li{
+    list-style: none;
+}
+.wrapper .header .header-menu li a div .profileImage {
+    margin-left: 30px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-image: url(../../assets/profilePic.png);
     background-size: cover;
   }
+  @media screen and (min-width:1024px){
+    .wrapper .header .header-menu li a div .profileImage{
+      margin-top: 0px;
+    }
+  }
+  .wrapper .header .header-menu li a div .profileImage .profileImageblinking{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top:3%;
+    right:-9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: white;
+    animation: blinkingprofile .8s infinite;    
+  }
+  @keyframes blinkingprofile{
+    0%{
+      transform: scale(.8);
+      opacity: .2;
+    }
+    100%{opacity: .8;
+      transform: scale(1.1);
+    }
+  }
   .wrapper .header .header-menu li a .dropdown-rightprofilepic {
     position: relative;
-    display: inline-block;
+    display: inline-block;  
+  }
+  .wrapper .header .header-menu li a div .profileImage .prof{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    right:-3%;
+    top: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+     margin-top: 10px;
+     background-color: blue;
+     /* animation: blinking 1s infinite; */
+  }
+  @media screen and (max-width:1024px){ 
+    .wrapper .header .header-menu li a div .profileImage .prof{  
+      margin-top: 17%;
+    }
+  
   }
   .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content {
     display: none;
     position: absolute;
-    margin-left: -100px;
+    margin-left: -50px;
     padding: 15px 15px;
-    margin-top: 13px;
+    /* margin-top: 1px; */
     background-color: white;
     width: 160px;
     height:200px;
@@ -127,15 +499,23 @@
     border-bottom: 1px solid rgb(220, 220, 221);
   }
   .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a {
-    color: #313131;
+    color: black;
     padding: 5px 5px;
     font-size: 16px;
     font-weight: 300;
     text-decoration: none;
     display: block;
   }
-
-  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a:hover {color: blue}
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a .profilelogo{
+    margin-right: 10px;
+    color: black;
+  }
+  .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a .profilelogotext{
+    font-size: 16px;
+    font-weight: 400;
+  }
+    .wrapper .header .header-menu li a .dropdown-rightprofilepic .dropdown-content a:hover  .p1{
+      color: blue;}
 
   .wrapper .header .header-menu li a .dropdown-rightprofilepic:hover .dropdown-content {
     display: block;
@@ -148,19 +528,33 @@
     0%{transform: translateY(20px);}
     100%{transform: translate(0);}
   }
-  @keyframes blinking{
-    0%{
-      opacity: 1;
-    }
-    100%{opacity: 0;
-    }
-  }
-  
-  .wrapper .sidebar{
+
+
+/* /////////////////code for RightProfilePic for large screen end///////////////////////// */
+
+
+
+
+
+
+
+
+
+/* ///////////code right corner 3 dot for small screen start//////////////////////////// */
+.wrapper .header .rightIcon{
+    width: 20px;
+    height: 20px;
+    color: blue;
+}
+.wrapper .header .rightIcon:hover{
+    cursor: pointer;
+}
+/* ///////////code right corner 3 dot for small screen end//////////////////////////// */
+.wrapper .sidebar{
     z-index: 1;
     background: #2F323A;
     position: fixed;
-    top:70px;
+    top:60px;
     width: 260px;
     height: calc(100% - 0px);
     transition: 0.3s;
@@ -169,7 +563,6 @@
   .wrapper .sidebar .sidebar-menu{
     overflow: hidden;
   }
-  
 
 
 .wrapper .sidebar .sidebar-menu .app-logo{
@@ -206,122 +599,59 @@
     color: #f6f7fb;
     font:16px work-Sans,sans-serif;
     font-weight: 700;
+    margin-top: 10px;
     margin-bottom: 0px;
   }
   .wrapper .sidebar .sidebar-menu .profile small{
     color: white;
     font-weight: 400;
     font:12px work-Sans,sans-serif;
+  }
 
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item{
-    width: 260px;
-    overflow: hidden;
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item .menu-btn{
-    display: block;
-    color: #fff;
-    position: relative;
-    padding: 8px 0px;
-    transition: 0.3s;
-    transition-property: color;
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item .menu-btn:hover{
-    color: #4CCEE8;
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item .menu-btn i{
-    margin-right: 20px;
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item .menu-btn .drop-down{
-    float: right;
-    font-size: 12px;
-    margin-top: 3px;
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item .sub-menu{
-    background-color: #3498DB;
-    overflow: hidden;
-    max-height: 0;
-    transition: 0.3s;
-    transition-property: background-color, max-height;
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item .sub-menu a{
-    display: block;
-    position: relative;
-    color: #fff;
-    white-space: nowrap;
-    font-size: 15px;
-    padding: 20px;
-    transition: 0.3s;
-    transition-property: background;
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item .sub-menu a:hover{
-    background: #55B1F0;
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item .sub-menu a:not(last-child){
-    border-bottom: 1px solid #8FC5E9;
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item .sub-menu i{
-    padding-right: 20px;
-    font-size: 10px;
-  }
-  
-  .wrapper .sidebar .sidebar-menu .item:target .sub-menu{
-    max-height: 500px;
-  }
-  .wrapper .main-container{
-    width: (100% - 260px);
-    margin-top: 80px;
+/* ///////////////side bar menu list start////////////////////////////////////////////// */
+
+
+
+/* //////////////////side bar menu list end////////////////////////////////////////////////////////// */
+  /* ////////////////main container start////////////////////// */
+
+.wrapper .main-container{
+    width: calc(100% - 260px);
+    margin-top: 60px;
     margin-left: 260px;
     padding: 15px;
-    background-size: cover;
     height: 100vh;
     background-color: #f6f7fb;
     transition: 0.3s;
   }
-  
+
+/* ///////////////////main container end//////////////// */
+
+
+.wrapper.collapse .main-container{
+    width: calc(100% - 0px);
+    margin-left: 0px;
+}
+  .wrapper.collapse .header{
+      margin-left: 0px;
+  }
   .wrapper.collapse .sidebar{
     width: 0px;
   }
-  
+
+  .wrapper.collapse .header .header-menu{
+      width: 100%;
+  }
   .wrapper.collapse .sidebar .profile img,
   .wrapper.collapse .sidebar .profile p,
   .wrapper.collapse .sidebar a span{
     display: none;
   }
-  
-  .wrapper.collapse .sidebar .sidebar-menu .item .menu-btn{
-    font-size: 23px;
-  }
-  
-  .wrapper.collapse .sidebar .sidebar-menu .item .sub-menu i{
-    font-size: 18px;
-    padding-left: 3px;
-  }
-  
-  .wrapper.collapse .main-container{
-    width: calc(100% - 0px);
-    margin-left: 0px;
-  }
-  
-  .wrapper.collapse .header{
-    width: calc(100% - 0px);
-      margin-left: 0px;
-  }
 
-  .wrapper .main-container .card{
-    background: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-                             
+.wrapper.colla .checking{
+  opacity: 1;
+}
+.wrapper.colla .main-container{
+  margin-top: 100px;
+}
+

@@ -10,14 +10,15 @@ class UserForgotPage extends Component {
                     <h2 className="logintextmain" >Register</h2>
                    {/* First Name & Last Name Start  */}
                         <div class="grid-x" >
-                            <div class="cell large-12 small-24 medium-12" style={{marginBottom:'10px'}}>
+                            <div class="cell large-11 small-24 medium-11" style={{marginBottom:'10px'}}>
                                 <span>Firstname
-                                    <input type="text" placeholder="Firstname" />
+                                    <input type="text" className="username" placeholder="Firstname" />
                                 </span>
                             </div>
-                            <div class="cell large-12 small-24 medium-12 ">
+                            <div class="cell large-2 medium-2 hide-for-small-only"></div>
+                            <div class="cell large-11 small-24 medium-11 " >
                                 <span>Lastname
-                                    <input type="text" placeholder="Lastname" />
+                                    <input type="text" className="username" placeholder="Lastname" />
                                 </span>
                             </div>
                         </div>
@@ -28,7 +29,7 @@ class UserForgotPage extends Component {
                         <div class="grid-x grid-padding-x">
                             <div class="cell small-24 medium-24">
                                 <span>Mobiile Number
-                                <input type="text" placeholder="Mobile Number" />
+                                <input type="text" className="username" placeholder="Mobile Number" />
                                 </span>
                             </div>
                         </div>   
@@ -69,7 +70,7 @@ class UserForgotPage extends Component {
                                 <span>Email
                                     <div>
                                         {/* <span class="input-group-label">@</span> */}
-                                        <input class="input-group-field" type="text" placeholder="test@gmail.com"/>
+                                        <input class="input-group-field" className="username" type="text" placeholder="test@gmail.com"/>
                                     </div>
                                 </span>
                             </div>
@@ -82,7 +83,7 @@ class UserForgotPage extends Component {
                             <div className="grid-x ">
                                 <div className="cell large-24 small-24 medium-24">
                                     <label>Password
-                                        <input type="password" placeholder="Password"/>
+                                        <input type="password" className="username" placeholder="Password"/>
                                     </label>
                                     <p >Your password must have at least 10 characters</p>                      
                                 </div>
@@ -92,8 +93,8 @@ class UserForgotPage extends Component {
                     {/* Password textbox End */}
 
                     {/* Upload File start */}
-                    <div className="row">
-                        <div className="grid-x grid-padding-x">
+                 
+                        <div className="grid-x">
                             <div className="cell large-24">
                                 <fieldset className="fieldset">
                                     <legend>Upload Photo</legend>
@@ -101,7 +102,7 @@ class UserForgotPage extends Component {
                                 </fieldset>
                             </div>
                         </div>
-                    </div>
+                 
                     {/* Upload File End */}
 
                     {/* Reset & Register Button Start */}

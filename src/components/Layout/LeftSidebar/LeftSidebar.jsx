@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './LeftSidebar.css';
 import LeftHeaderMenu from '../../UserDashboard/LeftHeaderMenu/LeftHeaderMenu';
-import { Link } from 'react-router-dom';
 
 class LeftSidebar extends Component {
     state={
