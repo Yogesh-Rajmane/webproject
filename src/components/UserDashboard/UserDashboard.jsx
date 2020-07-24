@@ -32,6 +32,9 @@ class UserDashboard extends Component {
             $(".sidebar-btn").click(function(){
                 $(".wrapper").toggleClass("collapse");
             });
+            $(".sidebar-btn-smallmenu").click(function(){
+                $(".wrapper").toggleClass("smallscreen");
+            });
 //////////////jquery code for create another copy of wrapper(small-medium-large screen)end///////////////////////////////////////////////////
 
 //////////////jquery code for create another copy of wrapper(small-medium-large screen)start  Note:-(three dot)///////////////////////////////////////////////////          
@@ -296,7 +299,7 @@ class UserDashboard extends Component {
                     <div className="show-for-small-only header ">
                         <div className="grid-x ">
                             <div className="cell small-22 medium-22">
-                                <div className="sidebar-btn" style={{marginLeft:'170px'}}><i className="fas fa-bars"></i></div>
+                                <div className="sidebar-btn sidebar-btn-smallmenu" style={{marginLeft:'170px'}}><i className="fas fa-bars"></i></div>
                             </div>
                             <div className="cell small-2 medium-2" >
                                 <div className="rightIcon">

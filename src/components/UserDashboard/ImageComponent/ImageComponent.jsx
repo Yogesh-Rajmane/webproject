@@ -5,7 +5,7 @@ class ImageComponent extends Component {
     render() {
         return (
                 <div className="ImageComponent">
-                    <div className="img" src="" alt="" ></div>
+                    <img className="img" src="" alt=""></img>
                 </div>
         )
     }

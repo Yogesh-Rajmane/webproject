@@ -1,43 +1,77 @@
 .UserMainMenu{
     margin: 1%;
-    width: 240px;
-    height: 300px;
+    width: 320px;  
+    height: 350px;
     border-radius: 5px;
     color: rgba(59, 58, 58, 0.644);
     background-color: white;
     border: 1px solid lightgray;
     line-height: .7;
 }
-@media screen and (max-width:639px){
-    .UserMainMenu{
-        width: 160px;
-    }
-}
+
 .UserMainMenu:hover{
     cursor: pointer;
+    outline: 2px solid gray;
+    transform: scale(1.02);
  }
-.images{
+
+.UserMainMenu .images{
     width: 100%;
     height: 60%;
 }
 
-.description{
+.UserMainMenu .description{
     position: relative;
     width: 100%;
     height: 40%;
     border:8px solid white;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    background-color: rgb(161, 157, 157);
+    /* background-color: rgb(161, 157, 157); */
 }
 
-.mar{
-    margin-left:8px;
-    font-size: 12px;
+.UserMainMenu .description .mainmenuname{
+    margin: 0 0 0 8px;
+    color:#2A3142;
+    font:18px work-Sans,sans-serif;
 }
-@media screen and (max-width:640px){
-    .mar{
-        margin-left: 1px;
-        font-size: 11px;
+
+.UserMainMenu .description .menuspeciallity {
+    margin-left: 8px;
+    color: rgba(59, 58, 58, 0.6);
+    font: 13px work-Sans,sans-serif;
+}
+
+.UserMainMenu .description .saladrating{
+    margin: 0 0 0 8px;
+    font: 13px work-Sans,sans-serif;
+}
+
+.UserMainMenu .description .deliverytime{
+    margin: 3px 0 0 8px;
+    font: 12px work-Sans,sans-serif
+}
+
+@media screen and (min-width:0px){
+    .UserMainMenu{
+        width: 100%;
+        /* width: 160px; */
+    }
+}
+@media screen and (min-width:401px){
+    .UserMainMenu{
+        width: 48%;
+        /* width: 160px; */
+    }
+}
+@media screen and (min-width:640px){
+    .UserMainMenu{
+        width: 31%;
+        /* width: 24/0px; */
+    }
+}
+@media screen and (min-width:1024px){
+    .UserMainMenu{
+        width: 23%;
     }
 }

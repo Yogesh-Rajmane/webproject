@@ -529,16 +529,6 @@ list-style: none;
   /* /////////////////////////////////////////////////////// */
 
 
-  /* /////////media query for small screen////////// */
-  @media screen and (max-width:640px){    /* //////headersmall class define for small screen it's alternate of header/////////////// */
-    .wrapper .headersmall {
-      margin-left:calc(100% - 81%);
-    }
-  }
-  /* ///////////////////////////////////////////////////// */
-
-
-
 
   /* ///////////////////small screen and medium screen hide when large screen active ///////////////////////////// */
   
@@ -657,7 +647,6 @@ list-style: none;
 /* //////////onclick event of sidebar-btn make a another copy/////////////////////////////////////////////// */
 .wrapper.collapse .main-container{
     width: calc(100% - 0px);
-
     margin-left: 0px;
 }
   .wrapper.collapse .header{
@@ -686,3 +675,12 @@ list-style: none;
   margin-top: 100px;
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* //////////main-container start with 0 margin  and side bar only move this feature only for small screen ////////////////////////////////////////// */
+@media screen and (max-width:1024px){
+  .wrapper .main-container{
+    width: 100% ;
+    margin-left: 0px;
+  }
+}
+/* /////////////////////////////////////////////////////////// */
