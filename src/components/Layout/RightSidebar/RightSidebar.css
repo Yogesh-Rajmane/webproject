@@ -1,23 +1,23 @@
 .mainmenu
 {
     width: 100%;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(230, 224, 224, 0.26);
+    /* background-color: rgba(230, 224, 224, 0.26); */
 }
 
 @media screen and (max-width:404px){
     .mainmenu{
         width: 100%;
-        margin-top: 5%;
+        /* margin-top: 5%; */
         margin-left: 0%;
     }
 }
 @media screen and (min-width:404px){
     .mainmenu{
         width: 100%;
-        margin-top: 5%;
+        /* margin-top: 5%; */
         margin-left: 10%;
     }
 } 
@@ -25,14 +25,14 @@
     .mainmenu{
         width: 100%;
         margin-left: 0%;
-        margin-top: 5%;
+        /* margin-top: 5%; */
     }
 }
 @media screen and (min-width:602px){
     .mainmenu{
         width: 100%;
         margin-left: 0%;
-        margin-top: 10%;
+        /* margin-top: 10%; */
     }
 }
 /* 

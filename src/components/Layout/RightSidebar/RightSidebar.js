@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import {BrowserRouter,Route,Link} from 'react-router-dom';
-import classes from './RightSidebar.css';
+import './RightSidebar.css';
 
 // import UserSubMenu from '../../UserDashboard/UserMainMenu/UserSubMenu/UserSubMenu';
 import UserMainMenu from '../../UserDashboard/UserMainMenu/UserMainMenu';
@@ -8,7 +8,7 @@ import UserMainMenu from '../../UserDashboard/UserMainMenu/UserMainMenu';
 
 class RightSidebar extends Component {
     state={
-        MainMenu:[1,2,3,4,5,6,7,8]
+        MainMenu:[1,2,3,4,5,6,7,8,9]
       }
     render() {
         const Mainmenu=this.state.MainMenu.map((person)=>{
@@ -18,7 +18,7 @@ class RightSidebar extends Component {
         return (
             <div>
                 {/* sidebar Started */}                               
-                <div className={classes.mainmenu}>
+                <div className="mainmenu">
                     {Mainmenu}
                 </div>
                 {/* sidebar Ended */}

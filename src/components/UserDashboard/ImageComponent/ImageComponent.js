@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import classes from './ImageComponent.css';
+import './ImageComponent.css';
 
 class ImageComponent extends Component {
     render() {
         return (
-                <div className={classes.ImageComponent}>
-                    <img src="\image\vegSalad.jpg" alt=""></img>
+                <div className="ImageComponent">
+                    <div className="img" src="" alt="" ></div>
                 </div>
         )
     }

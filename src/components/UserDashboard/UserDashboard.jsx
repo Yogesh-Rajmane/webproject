@@ -3,6 +3,7 @@ import './UserDashboard.css';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import LeftSidebar from '../Layout/LeftSidebar/LeftSidebar';
+import RightSidebar from '../Layout/RightSidebar/RightSidebar';
 
 
 class UserDashboard extends Component {
@@ -42,7 +43,16 @@ class UserDashboard extends Component {
     }    
     render() {
   ///////////////Header menu bar for large screen start////////////////////////////////////////////////////////////////////      
+        
         let largemenu =null;
+        let inputsearch=null;
+        inputsearch=(<div className="search-box">  
+                        <div className="search">
+                             <i className="fas fa-search"></i>
+                         </div>
+                        <input type="search" className="search-text" placeholder="search"/>
+                    </div>);
+        
         largemenu=(<div className="header demo">
         <div className="header-menu" > 
             
@@ -53,13 +63,16 @@ class UserDashboard extends Component {
                     </div>                           {/* sidebar menu using font awesome icon end*/}
                 </div>
 
-                <div className="cell large-12" >                    
-                    <div className="search-box">  {/* search text box start*/}
+                <div className="cell large-12" >
+                    {inputsearch}  
+                {/* search text box start*/}                  
+                    {/* <div className="search-box">  
                         <div className="search">
                             <i className="fas fa-search"></i>
                         </div>
                         <input type="search" className="search-text" placeholder="search"/>
-                    </div>                        {/* search text box end*/}
+                    </div>                    */}
+                         {/* search text box end*/}
                 </div>
                 
                 <div className="cell large-7" >
@@ -313,23 +326,30 @@ class UserDashboard extends Component {
                  {/* header for medium screen end */}
 {/* //////////////////////////////////////////////////////////////////// */}
 
-            <div className="hide-for-large header checking headersmall headermedium" >
-                <div className="header-menu">
-                <div className="grid-x">
 
-                <div className="cell small-10 medium-10">                    
-                    <div className="search-box">
+{/* ///////////////Header menu bar start for small and meduium screen start /////////////////////////////////////////////////////////////////// */}
+
+        <div className="hide-for-large header checking headersmall headermedium" >
+            <div className="header-menu">
+                
+                <div className="grid-x">
+                <div className="cell small-10 medium-10">
+                    {inputsearch}
+                    {/* <div className="search-box">  
                         <div className="search">
                             <i className="fas fa-search"></i>
                         </div>
                         <input type="search" className="search-text" placeholder="search"/>
-                    </div>
+                    </div> */}
                 </div>
+
                 
                 <div className="cell small-10 medium-10" >
-                    <ul>
+                        {/* shopping cart notification and message menu coding start */}
+                    <ul>   
                         <li><Link to="#"><i className="fas fa-shopping-cart"></i></Link></li>
-                      {/* //////////////////////////////////////////////////////////// */}
+
+                      {/* //////Notification menu coding start//////////////////////////////////////// */}
                       
                         <li><Link to="#"><i className="far fa-bell"><span className="blinkbell">.</span></i>
                             <div className="dropdown-bellsubmenu">
@@ -405,10 +425,9 @@ class UserDashboard extends Component {
                                 </div>
                             </div>
                         </Link></li>
-            {/* ///////////////////////////////////////////////////////////             */}
-                        {/* <li className="bell"><Link to="#" ><i className="far fa-comment">
-                            <span>.</span>
-                            </i></Link></li> */}
+                         {/* /////////Notification menu coding end///////////////////*/}
+                        
+                        {/* //////////////message menu coding start//////////////////// */}
                         <li className="bell bellicon"><Link to="#" ><i className="far fa-comment"><span className="blinkbell ">.</span></i>
                          
                             <div className="dropdown-msgsubmenu">
@@ -483,10 +502,12 @@ class UserDashboard extends Component {
                         </Link>
                         </li>
 
-           {/* ////////////////////////////////////////////////////////////////////                  */}
+           {/* /////////////message menu coding end///////////////////////////////////////////////////////                  */}
                     </ul>
+           {/* /////////////////shopping cart Notification menu and message coding end for small and medium screen///////////          */}
                 </div>
 
+{/* //////////////////////Header rightside profile image for small and medium screen start////////////// */}
                 <div className="cell small-4 medium-4 ">
                     <li ><Link to="#">
                         <div className="dropdown-rightprofilepic ">
@@ -520,9 +541,10 @@ class UserDashboard extends Component {
                         </div>
                     </Link></li>
                 </div>
+     {/* //////////Header right profile image coding for small and medium  end////////////////////////////////////////////////////////////////////////            */}
             </div>  
-                </div>
-            </div>
+        </div>
+    </div>
 
 {/* ///////////////////////////////////////////////////////////////////////// */}
                 
@@ -562,13 +584,14 @@ class UserDashboard extends Component {
 
                 {/* main container start */}
                 <div className="main-container">            
-                    {/* <UserMainMenu /> */}
-                    <div className="card">
+                    <RightSidebar />
+
+                    {/* <div className="card">
                         <p>Lorem Ipsum
                              is simply dummy text of the pri
                              nting and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500
                             s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    </div>
+                    </div> */}
                 </div>
                 {/* <!--main container end--> */}
 
