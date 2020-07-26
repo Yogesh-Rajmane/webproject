@@ -84,8 +84,7 @@ class UserForgotPage extends Component {
                                 <div className="cell large-24 small-24 medium-24">
                                     <label>Password
                                         <input type="password" className="username" placeholder="Password"/>
-                                    </label>
-                                    <p >Your password must have at least 10 characters</p>                      
+                                    </label>                      
                                 </div>
                             </div>   
                     </div>
@@ -107,7 +106,7 @@ class UserForgotPage extends Component {
 
                     {/* Reset & Register Button Start */}
                     <div className="row">
-                        <div className="grid-x grid-padding-x">
+                        <div className="grid-x ">
                             <div className="cell text-left small-6 medium-6 large-6 ">
                                 <button type="reset" className="primary button">Reset</button>
                             </div>

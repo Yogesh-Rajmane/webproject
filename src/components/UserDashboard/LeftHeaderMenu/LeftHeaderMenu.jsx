@@ -87,6 +87,7 @@ class LeftHeaderMenu extends Component{
                 <div className="cell small-18 medium-16 large-18"><p className="maintext">Dashboard</p></div>
                 <div className="cell small-2 medium-4 large-2 text-right">></div>
             </div> 
+
                 <div className="grid-x">
                     <div className="cell">
                         <ul className="sub-menu sdashboard">

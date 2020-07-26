@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './UserDashboard.css';
 import $ from 'jquery';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import LeftSidebar from '../Layout/LeftSidebar/LeftSidebar';
 import RightSidebar from '../Layout/RightSidebar/RightSidebar';
-
+import UserSubMenuShow from './UserMainMenu/UserSubMenu/UserSubMenuShow';
+import UserSelectedMenu from '../Layout/UserSelectedMenu/UserSelectedMenu';
 
 class UserDashboard extends Component {
 
@@ -49,6 +50,7 @@ class UserDashboard extends Component {
         
         let largemenu =null;
         let inputsearch=null;
+
         inputsearch=(<div className="search-box">  
                         <div className="search">
                              <i className="fas fa-search"></i>
@@ -66,16 +68,10 @@ class UserDashboard extends Component {
                     </div>                           {/* sidebar menu using font awesome icon end*/}
                 </div>
 
-                <div className="cell large-12" >
-                    {inputsearch}  
-                {/* search text box start*/}                  
-                    {/* <div className="search-box">  
-                        <div className="search">
-                            <i className="fas fa-search"></i>
-                        </div>
-                        <input type="search" className="search-text" placeholder="search"/>
-                    </div>                    */}
-                         {/* search text box end*/}
+                <div className="cell large-12" >  
+                    {/* search text box start*/}                  
+                        {inputsearch}
+                    {/* search text box end*/}
                 </div>
                 
                 <div className="cell large-7" >
@@ -586,19 +582,18 @@ class UserDashboard extends Component {
                 
 
                 {/* main container start */}
-                <div className="main-container">            
-                    <RightSidebar />
+                <div className="main-container">   
+                <Route path="/UserDashboard" exact component={RightSidebar} /> 
+                <Route path="/UserDashboard/UserSubMenu" exact component={UserSubMenuShow}/>
+                <Route path="/UserDashboard/UserSubMenu/UserSelectedMenu" component={UserSelectedMenu}/>   
+                {/* <Route path="/UserDashboard/UserSubMenu/UserSelectedMenu" component={UserSelectedMenu}/>     */}
+                    {/* <RightSidebar /> */}
+                    {/* <UserSubMenuShow />
+                    <UserSubMenuShow /> */}
+                    {/* <UserSelectedMenu /> */}
 
-                    {/* <div className="card">
-                        <p>Lorem Ipsum
-                             is simply dummy text of the pri
-                             nting and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500
-                            s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    </div> */}
                 </div>
                 {/* <!--main container end--> */}
-
-
         </div>
         )
     }

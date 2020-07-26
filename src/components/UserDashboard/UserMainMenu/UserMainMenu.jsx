@@ -1,11 +1,14 @@
 import React, { Component} from 'react';
 import './UserMainMenu.css';
 import ImageComponent from '../ImageComponent/ImageComponent';
+import { Link } from 'react-router-dom';
 
 class UserMainMenu extends Component {
     render() {
         return (
+
             <div className="UserMainMenu">
+                <Link to="/UserDashboard/UserSubMenu" className="mainlink">
                 {/* /////////////Main Menu Images start//////////// */}
                 <div className="images"><ImageComponent image={this.props.imageaddress}/> </div>
                 {/* /////////////Main Menu Images end//////////// */}
@@ -14,7 +17,7 @@ class UserMainMenu extends Component {
                 <div className="description">
                 
                         <div className="grid-x">
-                      <h4 className="mainmenuname cell small-24 medium-24 large-24">{this.props.menuname}</h4>     
+                            <h4 className="mainmenuname cell small-24 medium-24 large-24">{this.props.menuname}</h4>     
                         </div>
                         <div className="grid-x">
                             <p className="menuspeciallity cell small-24 medium-24 large-24">North Indian,Panjabi</p>             
@@ -26,11 +29,11 @@ class UserMainMenu extends Component {
                                 <div className="hide-for-small-only cell small-12 text-center medium-12 large-12"><p className="deliverytime">31&#45;MINS</p></div>
                                 <div className="cell small-6  medium-6 large-6"><p  className="saladrating deliverytime">&#8377;350</p></div>
                          </div>
-           {/* ///////////////Menu Name Price and rating coding end/////////////////// */}
-                   
+           {/* ///////////////Menuheading, discription, Price and rating coding end/////////////////// */}
                 </div>
+                </Link>
             </div>
-            
+
         )
     }
 }

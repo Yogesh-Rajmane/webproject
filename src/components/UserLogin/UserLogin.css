@@ -82,6 +82,7 @@ input[type="password"]{
 }
 .button:hover{
     cursor: pointer;
+    background-color: rgb(12, 58, 241);
 }
 @media screen and (min-width:1024px){
     .UserLogin{
@@ -93,30 +94,3 @@ input[type="password"]{
         align-items: center;
     }
 } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
