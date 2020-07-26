@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import classes from './OfferForPlan.css';
 import OfferForPlan from './OfferForPlan';
+
  class OfferForPlanShow extends Component {
      state={
          offer:[1,2,3,4,5,6,7,8]
@@ -15,7 +15,7 @@ import OfferForPlan from './OfferForPlan';
             />
         })
         return (
-            <div className={classes.plan}>
+            <div>
                 {offerForPlan}
             </div>
         )

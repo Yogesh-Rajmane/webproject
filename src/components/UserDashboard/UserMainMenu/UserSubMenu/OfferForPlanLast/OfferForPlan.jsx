@@ -1,21 +1,32 @@
 import React from 'react';
-import classes from './OfferForPlan.css';
+import './OfferForPlan.css';
+import { Link } from 'react-router-dom';
 const OfferForPlan=(props)=>{
     return (
-            <div className={classes.OfferForPlan}>
+            <div className="OfferForPlan">
                 <div>
-                    <div className="card" style={{backgroundColor:'lightgray',color:'white'}}>
-                        <div className="grid-x grid-padding-x">
-                            <h5 className="cell large-6">{props.promocode}</h5>
-                            <h6 className="cell large-6 text-right">{props.discount}</h6>
+                    <div className="card">
+                        <div className="grid-x ">
+                            <p className="cell small-12 medium-12 large-12 ">{props.promocode}</p>
+                            <p className="cell small-12 medium-12 large-12 ">{props.discount}</p>
                         </div>
-                        <p className="cell large-12 text-center"> For First50 old user </p>
+                        <div className="grid-x">
+                               <p className="cell small-24 medium-24 large-24 "> For First50 old user </p>
+                        </div>
+ 
+                        <div className="grid-x ">
+                            <p className="cell small-4 medium-4 large-4">Promocode:</p>
+                            <p className="cell small-20 medium-20 large-20">{props.promocode}</p>
+                        </div>
+                        <div grid-x>
+                            <div>
+                                <Link to="/UserDashboard/UserSubMenu/UserWallet">
+                                <button className="cell small-24 medium-24 large-24 button">Select</button>
+                                </Link>
+                            </div>
+                                
+                        </div>
 
-                        <div className="grid-x grid-padding-x">
-                            <h6 className="cell large-2">Promocode:</h6>
-                            <h6 className="cell large-10">{props.promocode}</h6>
-                        </div>
-                            <a className="cell large-12 button">Select</a>
                     </div>
                 </div>
             </div>

@@ -6,6 +6,12 @@ import LeftSidebar from '../Layout/LeftSidebar/LeftSidebar';
 import RightSidebar from '../Layout/RightSidebar/RightSidebar';
 import UserSubMenuShow from './UserMainMenu/UserSubMenu/UserSubMenuShow';
 import UserSelectedMenu from '../Layout/UserSelectedMenu/UserSelectedMenu';
+import SubscribePlanShow from './UserMainMenu/UserSubMenu/SubscribePlan/SubscribePlanShow';
+import SubscribePlanSchedule from './UserMainMenu/UserSubMenu/SubscribePlanSchedule/SubscriberPlanSchedule';
+import UserAddress from './UserAddress/UserAddress';
+import OfferForPlanShow from './UserMainMenu/UserSubMenu/OfferForPlanLast/OfferForPlanShow';
+import UserWallet from './UserWallet/UserWallet';
+import ThankYou from './ThankYou/ThankYou';
 
 class UserDashboard extends Component {
 
@@ -586,7 +592,18 @@ class UserDashboard extends Component {
                 <Route path="/UserDashboard" exact component={RightSidebar} /> 
                 <Route path="/UserDashboard/UserSubMenu" exact component={UserSubMenuShow}/>
                 <Route path="/UserDashboard/UserSubMenu/UserSelectedMenu" component={UserSelectedMenu}/>   
-                {/* <Route path="/UserDashboard/UserSubMenu/UserSelectedMenu" component={UserSelectedMenu}/>     */}
+                <Route path="/UserDashboard/UserSubMenu/Offer" component={SubscribePlanShow}/>    
+                <Route path="/UserDashboard/UserSubMenu/SubscribePlanSchedule" component={SubscribePlanSchedule}/>
+                <Route path="/UserDashboard/UserSubMenu/UserAddress" component={UserAddress}/>
+                <Route path="/UserDashboard/UserSubMenu/OfferForPlanShow" component={OfferForPlanShow}/>
+                <Route path="/UserDashboard/UserSubMenu/UserWallet" component={UserWallet}/>
+                <Route path="/UserDashboard/UserSubMenu/ThankYou" component={ThankYou}/>
+            {/* <ThankYou/> */}
+                {/* <UserWallet/> */}
+                 {/* <OfferForPlanShow /> */}
+                  {/* <UserAddress /> */}
+                 {/* <SubscribePlanSchedule/>    */}
+                    {/* <SubscribePlanShow /> */}
                     {/* <RightSidebar /> */}
                     {/* <UserSubMenuShow />
                     <UserSubMenuShow /> */}

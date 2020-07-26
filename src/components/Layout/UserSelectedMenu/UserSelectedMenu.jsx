@@ -50,7 +50,7 @@ class UserSelectedMenu extends Component {
                             <button type="button" className="button register customize">Total: &#8377;{this.state.total}</button>
                     </div>
                     <div className="cell small-6 medium-6 large-6">
-                    <Link to="/UserRegister">
+                    <Link to="/UserDashboard/UserSubMenu/Offer">
                             <button type="button" className="button register customize">Add To Cart</button>
                     </Link>
                     </div>

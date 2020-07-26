@@ -8,9 +8,12 @@
     border: 1px solid lightgray;
     line-height: .7;
 }
-.UserMainMenu .mainlink{
+.UserMainMenu .mainlink:active,
+.UserMainMenu .mainlink:link
+{
     text-decoration: none;
 }
+
 .UserMainMenu:hover{
     cursor: pointer;
     outline: 2px solid gray;
@@ -46,6 +49,7 @@
 
 .UserMainMenu .description .saladrating{
     margin: 0 0 0 8px;
+    /* color: black; */
     font: 13px work-Sans,sans-serif;
 }
 

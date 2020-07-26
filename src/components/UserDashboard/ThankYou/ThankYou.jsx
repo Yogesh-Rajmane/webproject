@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import classes from './ThankYou.css';
+import './ThankYou.css';
 
  class ThankYou extends Component {
     render() {
         return (
-            <div className={classes.ThankYou}>
+            <div className="ThankYou">
                     <img src="\images\ThankYou.jpg" alt=""></img>                
             </div>
         )

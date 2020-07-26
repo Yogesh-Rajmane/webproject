@@ -3,8 +3,6 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    /* background-color: red; */
-    /* background-color: rgba(230, 224, 224, 0.26); */
 }
 
 
@@ -22,26 +20,3 @@
         margin-right: 0;
     }
 }
-/* 
-@media screen and (min-width:401px){
-    .mainmenu{
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-} 
-
-@media screen and (min-width:440px){
-    .mainmenu{
-        width: 84%;
-        margin-left: 8%;
-        margin-right: 8%;
-    }
-} 
-@media screen and (min-width:640px){
-    .mainmenu{
-        width: 100%;
-        margin-left:0px;
-    }
-}
- */

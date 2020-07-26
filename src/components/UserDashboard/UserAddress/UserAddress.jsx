@@ -1,59 +1,80 @@
-import React from 'react';
-import classes from './UserAddress.css';
- const UserAddress = () => {
+import React, { Component } from 'react';
+import './UserAddress.css';
+import { Link } from 'react-router-dom';
+
+class UserAddress extends Component{
+    render(){
+
     return (
-        <div className={classes.UserAddress}>
-            <div className={classes.UserAddressElement}>
+        <div className="UserAddress">
             <form>
-                <div className="grid-x grid-padding-x">
-                    <div className="cell">
+                <div className="grid-x ">
+                    <div className="cell small-24 medium-24 large-24">
                         <label >Enter Name</label>
-                        <input type="text" placeholder="Enter Name" ></input>
+                        <input type="text" className="username" placeholder="Enter Name" ></input>
+                    </div>
+                </div>
+                <div className="grid-x ">
+                    <div className="cell small-24 medium-24 large-24">
+                        <label >Enter Mobile Number</label>
+                        <input type="text" className="username" placeholder="Mobile Number"></input>
+                    </div>
+                </div>
+{/* //////////////////////////////////////////////////////////////////////////////////// */}
+
+                        <div className="row">
+                            <div className="grid-x">
+                                <div className="cell large-6 small-24 medium-24 radiomain">
+                                    <h4 className="radiomain">Gender:</h4>
+                                </div>
+                                <div className="show-for-small-only cell small-6"></div>
+                                <div className="show-for-medium-only cell medium-6"></div>
+                                <div className="cell large-6 small-7 medium-8 leftradio">
+                                    <label className="radiocontainer">Male
+                                        <input type="radio" name="gender"></input>
+                                        <span className="circle"></span>
+                                    </label>
+                                </div>
+                                
+                                <div className="cell large-12 small-11 medium-10 rightradio">
+                                    <label className="radiocontainer">Female
+                                        <input type="radio" name="gender"></input>
+                                        <span className="circle"></span>
+                                    </label>
+                                </div>
+                            </div>
                     </div>
 
-                    <div className="cell">
-                        <label >Enter Mobile Number</label>
-                        <input type="text" placeholder="Mobile Number"></input>
-                    </div>
-                    
-                    <div className="cell" style={{marginLeft:'40%'}}>
-                        
-                        <label style={{marginLeft:'4%'}}>Address Save As</label>
-                        <div style={{display:'flex'}}>
-                            <div>
-                                <input type="radio" value="option1" checked>
-                                </input><label>Home</label>
-                            </div>
-                            <div style={{marginLeft:'6%'}}>
-                                <input type="radio" value="option2">
-                                </input><label>Office</label>
-                            </div>
+{/* /////////////////////////////////////////////////////////////// */}
+                    <div className="grid-x">
+                        <div className="cell small-24 medium-24 large-24">
+                            <label>Flat no/Building Name</label>
+                            <input type="text" className="username"></input>
                         </div>
                     </div>
-                    <div className="cell">
-                        <label>Flat no/Building Name</label>
-                        <input type="text" ></input>
+
+                    <div className="grid-x">
+                        <div className="cell small-24 medium-24 large-24">
+                            <label >Lane no/Lane Name</label>
+                            <input type="text" className="username"></input>
+                        </div>
                     </div>
 
-                    <div className="cell">
-                        <label >Lane no/Lane Name</label>
-                        <input type="text"></input>
-                    </div>
-                    </div>
-
-                    <div className="grid-x grid-padding-x">
-                            <div className="cell small-6 medium-6 large-6"> 
-                                <button type="reset" className="button secondary">Reset</button>
+                    <div className="grid-x ">
+                            <div className="cell small-10 medium-10 large-10"> 
+                                <button type="reset" className="button ">Reset</button>
                             </div>
-                            <div className="cell small-6 medium-6 large-6 text-right">
-                                <button type="button" className="button">Save & Next</button>
+                            <div className="cell small-4 medium-4 large-4"></div>
+                            <div className="cell small-10 medium-10 large-10 ">
+                                <Link to="/UserDashboard/UserSubMenu/OfferForPlanShow">
+                                     <button type="button" className="button">Save & Next</button>
+                                </Link>
                             </div>
                     </div>        
                     
                 </form>
-
-            </div>
         </div>
     )
+}
 }
 export default UserAddress;

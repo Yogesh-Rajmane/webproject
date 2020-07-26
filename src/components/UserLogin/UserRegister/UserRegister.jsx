@@ -57,7 +57,6 @@ class UserForgotPage extends Component {
                                         <span className="circle"></span>
                                     </label>
                                 </div>
-                            
                             </div>
                         {/* </fieldset>*/}
                     </div>
@@ -108,7 +107,7 @@ class UserForgotPage extends Component {
                     <div className="row">
                         <div className="grid-x ">
                             <div className="cell text-left small-6 medium-6 large-6 ">
-                                <button type="reset" className="primary button">Reset</button>
+                                <button type="reset" className="button">Reset</button>
                             </div>
                             <div className="cell small-12 medium-12 large-12"></div>
                             <div className="cell text-right small-6 medium-6 large-6">

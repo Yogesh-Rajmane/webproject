@@ -42,7 +42,9 @@
     color: rgb(139, 135, 135);
 }
 input[type="text"],
-input[type="password"]{
+input[type="password"],
+input[type="date"],
+input[type="time"]{
     width: 100%;
     border: 1px solid lightgray;
     height: 40px;
